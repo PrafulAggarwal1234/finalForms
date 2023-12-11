@@ -1,0 +1,2653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zuhaus</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="docstyle.css" />
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.js"></script>
+  <style>
+    .date {
+      width: 2em;
+      text-align: center;
+      margin: 5px;
+    }
+
+    .acenter {
+      align-items: center !important;
+    }
+
+    th {
+      color: darkred;
+      font-size: 14px;
+    }
+
+    @media only screen and (max-width: 979px) {
+      .one {
+        display: block !important;
+      }
+
+      .two {
+        width: 300px !important;
+      }
+
+      .col {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-left: 1rem !important;
+        margin-right: 2rem !important;
+        margin-bottom: 2rem !important;
+      }
+
+      .no {
+        margin-left: 0 !important;
+      }
+
+      .fsize {
+        font-size: 12.5px;
+        width: 140px !important;
+      }
+
+      .three {
+        width: 40px !important;
+      }
+
+      .four {
+        width: 59px !important;
+      }
+
+      .five {
+        width: 130px !important;
+      }
+
+      .no2 {
+        margin-right: 2rem !important;
+        margin-left: 1rem !important;
+      }
+
+      .no3 {
+        margin-left: 0 !important;
+      }
+
+      .date {
+        margin: 2px !important;
+      }
+
+      .six {
+        width: 52px;
+        text-align: center;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <img src="assets/zuhuaslogowithoutzfinal.png" class="logo" />
+
+    <nav class="navbar">
+      <ul class="navbar-list">
+        <li><a class="navbar-link" href="index.html">Home</a></li>
+        <li><a class="navbar-link" href="blog.html">Blogs</a></li>
+        <li><a class="navbar-link" href="#">Verification</a></li>
+
+        <li><a class="button-29" href="#">Sign In</a></li>
+        <l1><a class="" href="#"><img src="assets/telegram-removebg-preview.png" width="65rem" /></a></l1>
+      </ul>
+    </nav>
+
+    <div class="mobile-navbar-btn">
+      <ion-icon name="menu-outline" class="mobile-nav-icon"></ion-icon>
+      <ion-icon name="close-outline" class="mobile-nav-icon"></ion-icon>
+    </div>
+  </header>
+
+  <!-- ======================================== 
+          Our Main Hero Section Start  
+    ========================================  -->
+
+  <div class="wrapper">
+    <div class="title">Registration Form</div>
+    <form data-netlify="true" id="form">
+      <div class="form">
+        <h4 style="font-size: 15px">
+          Anyone who moves into an apartment must register with the
+          registration authority within two weeks (Section 17 Paragraph 1 of
+          the Federal Registration Act).
+        </h4>
+        <br />
+        <h4 style="font-size: 15px">
+          Information aboutr/tom housing provider*in:
+        </h4>
+        <br />
+
+        <h1 style="color: darkred">New Flat:</h1>
+        <div style="margin-left: 3rem">
+          <div class="inputfield one">
+            <label for="day" style="width: 14rem">Move-in day* :</label>
+            <input class="date" type="text" maxlength="2" id="day" placeholder="DD"
+              oninput="moveToNextField(this, 'month')" max="31" min="1" />
+            /
+            <input class="date" type="text" maxlength="2" id="month" placeholder="MM"
+              oninput="moveToNextField(this, 'year')" max="12" min="1" />
+            /
+            <input class="date" type="text" maxlength="2" id="year" placeholder="YY"
+              oninput="moveToNextField(this, null)" min="1" />
+          </div>
+          <div class="inputfield">
+            <label for="zip">Zip code, municipality Stuttgart* :</label>
+            <input type="text" class="input" id="zip" name="zip" required />
+          </div>
+          <div class="inputfield">
+            <label for="newFlatAddress" class="two">Part of the community, street, house number, addition,
+              apartment number* :
+            </label>
+            <input type="text" class="input" id="newFlatAddress" name="newFlatAddress" required />
+          </div>
+        </div>
+        <br />
+        <br />
+
+        <h1 style="color: darkred">
+          Previous residence:&nbsp;
+          <span style="color: darkred; font-size: 12px">(Do not fill in if current apartment is to be retained.)</span>
+        </h1>
+        <div style="margin-left: 3rem">
+          <div class="inputfield" style="margin-top: 1rem">
+            <label for="prevpostalcode" class="two">Postal code, municipality, federal state (if moving from
+              abroad: specify state):</label>
+            <input type="text" class="input" id="prevpostalcode" name="zip" />
+          </div>
+          <div class="inputfield">
+            <label for="prevaddress" class="two">Street, house number, addition, apartment number:
+            </label>
+            <input type="text" class="input" id="prevaddress" name="address" />
+          </div>
+          <div class="inputfield">
+            <label for="prevabroadaddress" class="two">If you are moving from abroad: last address in Germany:
+            </label>
+            <input type="text" class="input" id="prevabroadaddress" name="address" />
+          </div>
+        </div>
+        <br />
+        <br />
+
+
+
+        <h1 style="color: darkred">
+          The registration applies to the following people:
+          <span style="font-size: 1.7rem">(Part-1)</span>
+        </h1>
+        <table>
+          <tr>
+            <th>Ongoing No.</th>
+            <th>Family name</th>
+            <th>
+              First name(s)
+            </th>
+            <th>
+              Date of Birth
+            </th>
+            <th>Gender
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <div class="inputfield acenter">
+                1
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="familyname1" name="familyname1" />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="firstname1" name="firstname1" />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield col">
+                <input class="date" type="text" maxlength="2" id="day1" placeholder="DD"
+                  oninput="moveToNextField(this, 'month1')" max="31" min="1" />
+                /
+                <input class="date" type="text" maxlength="2" id="month1" placeholder="MM"
+                  oninput="moveToNextField(this, 'year1')" max="12" min="1" />
+                /
+                <input class="date" type="text" maxlength="2" id="year1" placeholder="YY"
+                  oninput="moveToNextField(this, null)" min="1" />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <label style="width: max-content; margin-left: 2rem" class="no">
+                  <input type="checkbox" name="gender1" value="M" onclick="handleCheckboxClick(this, 1)" />
+                  M
+                </label>
+                <br />
+                <label style="width: max-content">
+                  <input type="checkbox" name="gender1" value="F" onclick="handleCheckboxClick(this, 1)" />
+                  F
+                </label>
+                <br />
+                <label style="width: max-content">
+                  <input type="checkbox" name="gender1" value="D" onclick="handleCheckboxClick(this, 1)" />
+                  D
+                </label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="inputfield acenter">
+                2
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="familyname2" name="zip" />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="firstname2" name="address" />
+              </div>
+
+            </td>
+            <td>
+              <div class="inputfield col">
+                <input class="date" type="text" maxlength="2" id="day2" placeholder="DD"
+                  oninput="moveToNextField(this, 'month2')" max="31" min="1" />
+                /
+                <input class="date" type="text" maxlength="2" id="month2" placeholder="MM"
+                  oninput="moveToNextField(this, 'year2')" max="12" min="1" />
+                /
+                <input class="date" type="text" maxlength="2" id="year2" placeholder="YY"
+                  oninput="moveToNextField(this, null)" min="1" />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <label style="width: max-content; margin-left: 2rem" class="no">
+                  <input type="checkbox" name="gender2" value="M" onclick="handleCheckboxClick(this, 2)" />
+                  M
+                </label>
+                <br />
+                <label style="width: max-content">
+                  <input type="checkbox" name="gender2" value="F" onclick="handleCheckboxClick(this, 2)" />
+                  F
+                </label>
+                <br />
+                <label style="width: max-content">
+                  <input type="checkbox" name="gender2" value="D" onclick="handleCheckboxClick(this, 2)" />
+                  D
+                </label>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="inputfield acenter">
+                3
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="familyname3" name="zip" />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="firstname3" name="address" />
+              </div>
+
+            </td>
+            <td>
+              <div class="inputfield col">
+                <input class="date" type="text" maxlength="2" id="day3" placeholder="DD"
+                  oninput="moveToNextField(this, 'month3')" max="31" min="1" />
+                /
+                <input class="date" type="text" maxlength="2" id="month3" placeholder="MM"
+                  oninput="moveToNextField(this, 'year3')" max="12" min="1" />
+                /
+                <input class="date" type="text" maxlength="2" id="year3" placeholder="YY"
+                  oninput="moveToNextField(this, null)" min="1" />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <label style="width: max-content; margin-left: 2rem" class="no">
+                  <input type="checkbox" name="gender3" value="M" onclick="handleCheckboxClick(this, 3)" />
+                  M
+                </label>
+                <br />
+                <label style="width: max-content">
+                  <input type="checkbox" name="gender3" value="F" onclick="handleCheckboxClick(this, 3)" />
+                  F
+                </label>
+                <br />
+                <label style="width: max-content">
+                  <input type="checkbox" name="gender3" value="D" onclick="handleCheckboxClick(this, 3)" />
+                  D
+                </label>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="inputfield acenter">
+                4
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="familyname4" name="zip" />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="firstname4" name="address" />
+              </div>
+
+            </td>
+            <td>
+              <div class="inputfield col">
+                <input class="date" type="text" maxlength="2" id="day4" placeholder="DD"
+                  oninput="moveToNextField(this, 'month4')" max="31" min="1" />
+                /
+                <input class="date" type="text" maxlength="2" id="month4" placeholder="MM"
+                  oninput="moveToNextField(this, 'year4')" max="12" min="1" />
+                /
+                <input class="date" type="text" maxlength="2" id="year4" placeholder="YY"
+                  oninput="moveToNextField(this, null)" min="1" />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <label style="width: max-content; margin-left: 2rem" class="no">
+                  <input type="checkbox" name="gender4" value="M" onclick="handleCheckboxClick(this, 4)" />
+                  M
+                </label>
+                <br />
+                <label style="width: max-content">
+                  <input type="checkbox" name="gender4" value="F" onclick="handleCheckboxClick(this, 4)" />
+                  F
+                </label>
+                <br />
+                <label style="width: max-content">
+                  <input type="checkbox" name="gender4" value="D" onclick="handleCheckboxClick(this, 4)" />
+                  D
+                </label>
+              </div>
+            </td>
+          </tr>
+
+        </table>
+        <br />
+        <br />
+
+<!-- part 2 -->
+<h1 style="color: darkred">
+  The registration applies to the following people:
+  <span style="font-size: 1.7rem">(Part-2)</span>
+</h1>
+        <table>
+          <tr>
+              <th >Ongoing No.</th>
+              <th>Place Of Birth</th>
+              <th>
+                Martial status
+              </th>
+              <th>
+                Martial status since
+              </th>
+              <th>Place of marriage /Justification of theCivil partnership
+              </th>
+          </tr>
+          <tr>
+              <td>
+      <div class="inputfield">
+       1.
+        </div>
+      </td>
+      <td>
+        <div class="inputfield">
+          <input type="text" class="input" id="placeofbirth1" name="zip"/>
+        </div>
+      </td>
+      <td>
+        <div class="inputfield">
+          <select id="martialstatus1" name="martialstatus1" style="max-width: 30vw;" >
+            <option value="select">Select</option>
+            <option value="LD">Single</option>
+            <option value="VH">Married</option>
+            <option value="VW">Widowed</option>
+            <option value="GS">Divorced</option>
+            <option value="LP">Civil Partnership</option>
+            <option value="LV">Civil Partner Deceased</option>
+            <option value="LA">Civil Partnership Annulled</option>
+          </select>
+        </div>
+      </td>
+      <td>
+        <div class="inputfield">
+        <input class="date" type="text" maxlength="2" id="day5" placeholder="DD"
+        oninput="moveToNextField(this, 'month5')" max="31" min="1" />
+      <input class="date" type="text" maxlength="2" id="month5" placeholder="MM"
+        oninput="moveToNextField(this, 'year5')" max="12" min="1" />
+      <input class="date" type="text" maxlength="2" id="year5" placeholder="YY"
+        oninput="moveToNextField(this, null)" min="1" />
+        </div>
+      </td>
+      <td>
+        <div class="inputfield">
+          <input type="text" class="input" id="placeofmarriage1" name="placeofmarriage1"
+                   />
+        </div>
+      </td>
+      </tr>
+      <tr>
+        <td>
+<div class="inputfield">
+  2.
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <input type="text" class="input" id="placeofbirth2" name="zip"
+                />
+  </div>
+</td>
+<td>
+  <div class="inputfield">
+    <select id="martialstatus2" name="martialstatus2" style="max-width: 30vw;" >
+      <option value="select">Select</option>
+      <option value="LD">Single</option>
+      <option value="VH">Married</option>
+      <option value="VW">Widowed</option>
+      <option value="GS">Divorced</option>
+      <option value="LP">Civil Partnership</option>
+      <option value="LV">Civil Partner Deceased</option>
+      <option value="LA">Civil Partnership Annulled</option>
+    </select>
+  </div>
+  
+</td>
+<td>
+  <div class="inputfield">
+    <input class="date" type="text" maxlength="2" id="day6" placeholder="DD"
+    oninput="moveToNextField(this, 'month6')" max="31" min="1" />
+  <input class="date" type="text" maxlength="2" id="month6" placeholder="MM"
+    oninput="moveToNextField(this, 'year6')" max="12" min="1" />
+  <input class="date" type="text" maxlength="2" id="year6" placeholder="YY"
+    oninput="moveToNextField(this, null)" min="1"  />
+  </div>
+</td>
+<td>
+  <div class="inputfield">
+    <input type="text" class="input" id="placeofmarriage2" name="zip"
+    />
+</div>
+</td>
+</tr>
+
+<tr>
+  <td>
+<div class="inputfield">
+3.
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <input type="text" class="input" id="placeofbirth3" name="placeofbirth3"
+  />
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <select id="martialstatus3" name="martialstatus3" style="max-width: 30vw;" >
+    <option value="select">Select</option>
+    <option value="LD">Single</option>
+    <option value="VH">Married</option>
+    <option value="VW">Widowed</option>
+    <option value="GS">Divorced</option>
+    <option value="LP">Civil Partnership</option>
+    <option value="LV">Civil Partner Deceased</option>
+    <option value="LA">Civil Partnership Annulled</option>
+  </select>
+</div>
+
+</td>
+<td>
+<div class="inputfield">
+  <input class="date" type="text" maxlength="2" id="day7" placeholder="DD"
+  oninput="moveToNextField(this, 'month7')" max="31" min="1" />
+<input class="date" type="text" maxlength="2" id="month7" placeholder="MM"
+  oninput="moveToNextField(this, 'year7')" max="12" min="1" />
+<input class="date" type="text" maxlength="2" id="year7" placeholder="YY"
+  oninput="moveToNextField(this, null)" min="1"  />
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <input type="text" class="input" id="placeofmarriage3" name="placeofmarriage3"
+  />
+</div>
+</td>
+</tr>
+
+<tr>
+  <td>
+<div class="inputfield">
+4.
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <input type="text" class="input" id="placeofbirth4" name="placeofbirth4"
+  />
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <select id="martialstatus4" name="martialstatus4" style="max-width: 30vw;">
+    <option value="select">Select</option>
+    <option value="LD">Single</option>
+    <option value="VH">Married</option>
+    <option value="VW">Widowed</option>
+    <option value="GS">Divorced</option>
+    <option value="LP">Civil Partnership</option>
+    <option value="LV">Civil Partner Deceased</option>
+    <option value="LA">Civil Partnership Annulled</option>
+  </select>
+</div>
+
+</td>
+<td>
+<div class="inputfield">
+  <input class="date" type="text" maxlength="2" id="day8" placeholder="DD"
+  oninput="moveToNextField(this, 'month8')" max="31" min="1" />
+<input class="date" type="text" maxlength="2" id="month8" placeholder="MM"
+  oninput="moveToNextField(this, 'year8')" max="12" min="1" />
+<input class="date" type="text" maxlength="2" id="year8" placeholder="YY"
+  oninput="moveToNextField(this, null)" min="1"  />
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <input type="text" class="input" id="placeofmarriage4" name="placeofmarriage4"
+                  />
+</div>
+</td>
+</tr>
+
+</table>
+        <br />
+        <br />
+
+        <h1 style="color: darkred">
+          The registration applies to the following people:
+          <span style="font-size: 1.7rem">(Part-3)</span>
+        </h1>
+        <table style="width: 100%;">
+          <tr>
+            <th>Ongoing No.</th>
+            <th>Relegion</th>
+            <th>Nationality(s)</th>
+          </tr>
+          <tr>
+            <td>
+              <div class="inputfield acenter" style="justify-content: center;">
+                1
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="relegion1" name="relegion1" />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="nationality1" name="nationality1" />
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="inputfield acenter" style="justify-content: center;">
+                2
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="relegion2" name="relegion2" />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="nationality2" name="nationality2" />
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="inputfield acenter" style="justify-content: center;">
+                3
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="relegion3" name="relegion3" />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="nationality3" name="nationality3" />
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="inputfield acenter" style="justify-content: center;">
+                4
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="relegion4" name="relegion4" />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="nationality4" name="nationality4" />
+              </div>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <br />
+
+<!-- part 4 -->
+<h1 style="color: darkred">
+  The registration applies to the following people:
+  <span style="font-size: 1.7rem">(Part-4)</span>
+</h1>
+<table>
+  <tr>
+      <th style="font-size: 10px;">Ongoing No.</th>
+      <th style="font-size: 10px;">Art</th>
+      <th style="font-size: 10px;">
+        Serial Number
+      </th>
+      <th style="font-size: 10px;">
+        Issuing authority
+      </th>
+      <th style="font-size: 10px;">Date of Issue
+      </th>
+      <th style="font-size: 10px;">Date of Expiry
+      </th>
+  </tr>
+  <tr>
+      <td>
+<div class="inputfield">
+1.
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <select id="art1" name="art1" style="max-width: 30vw;">
+    <option value="select">Select</option>
+    <option value="PA">ID card</option>
+    <option value="VP">Current ID card</option>
+    <option value="RP">Passport</option>
+    <option value="KP">Children's Passport</option>
+    <option value="PE">Passport Replacement</option>
+  </select>
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <input type="text" class="input" id="serialno1" name="serialno1" style="max-width: 30vw;"
+  />
+</div>
+</td>
+<td>
+  <div class="inputfield">
+    <input type="text" class="input" id="issueauthority1" name="issueauthority1" style="max-width: 30vw;"/>
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <input class="date" type="text" maxlength="2" id="day9" placeholder="DD"
+  oninput="moveToNextField(this, 'month9')" max="31" min="1" />
+<input class="date" type="text" maxlength="2" id="month9" placeholder="MM"
+  oninput="moveToNextField(this, 'year9')" max="12" min="1" />
+<input class="date" type="text" maxlength="2" id="year9" placeholder="YY"
+  oninput="moveToNextField(this, null)" min="1"  />
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <input class="date" type="text" maxlength="2" id="day10" placeholder="DD"
+                  oninput="moveToNextField(this, 'month10')" max="31" min="1" />
+<input class="date" type="text" maxlength="2" id="month10" placeholder="MM"
+                  oninput="moveToNextField(this, 'year10')" max="12" min="1" />
+<input class="date" type="text" maxlength="2" id="year10" placeholder="YY"
+                  oninput="moveToNextField(this, null)" min="1" />
+</div>
+</td>
+</tr>
+  <tr>
+      <td>
+<div class="inputfield">
+2.
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <select id="art2" name="art2" style="max-width: 30vw;">
+    <option value="select">Select</option>
+    <option value="PA">ID card</option>
+    <option value="VP">Current ID card</option>
+    <option value="RP">Passport</option>
+    <option value="KP">Children's Passport</option>
+    <option value="PE">Passport Replacement</option>
+  </select>
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <input type="text" class="input" id="serialno2" name="serialno2"
+  style="max-width: 30vw;" />
+</div>
+</td>
+<td>
+  <div class="inputfield">
+    <input type="text" class="input" id="issueauthority2" name="issueauthority2" style="max-width: 30vw;" />
+
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <input class="date" type="text" maxlength="2" id="day11" placeholder="DD"
+  oninput="moveToNextField(this, 'month11')" max="31" min="1" />
+<input class="date" type="text" maxlength="2" id="month11" placeholder="MM"
+  oninput="moveToNextField(this, 'year11')" max="12" min="1" />
+<input class="date" type="text" maxlength="2" id="year11" placeholder="YY"
+  oninput="moveToNextField(this, null)" min="1" />
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <input class="date" type="text" maxlength="2" id="day12" placeholder="DD"
+  oninput="moveToNextField(this, 'month12')" max="31" min="1" />
+<input class="date" type="text" maxlength="2" id="month12" placeholder="MM"
+  oninput="moveToNextField(this, 'year12')" max="12" min="1" />
+<input class="date" type="text" maxlength="2" id="year12" placeholder="YY"
+  oninput="moveToNextField(this, null)" min="1" />
+</div>
+</td>
+</tr>
+  <tr>
+      <td>
+<div class="inputfield">
+3.
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <select id="art3" name="art3" style="max-width: 30vw;">
+    <option value="select">Select</option>
+    <option value="PA">ID card</option>
+    <option value="VP">Current ID card</option>
+    <option value="RP">Passport</option>
+    <option value="KP">Children's Passport</option>
+    <option value="PE">Passport Replacement</option>
+  </select>
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <input type="text" class="input" id="serialno3" name="serialno3"
+                  style="max-width: 30vw;" />
+</div>
+</td>
+<td>
+  <div class="inputfield">
+    <input type="text" class="input" id="issueauthority3" name="issueauthority3" style="max-width: 30vw;" />
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <input class="date" type="text" maxlength="2" id="day13" placeholder="DD"
+                  oninput="moveToNextField(this, 'month13')" max="31" min="1" />
+                <input class="date" type="text" maxlength="2" id="month13" placeholder="MM"
+                  oninput="moveToNextField(this, 'year13')" max="12" min="1" />
+                <input class="date" type="text" maxlength="2" id="year13" placeholder="YY"
+                  oninput="moveToNextField(this, null)" min="1" />
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <input class="date" type="text" maxlength="2" id="day14" placeholder="DD"
+                  oninput="moveToNextField(this, 'month14')" max="31" min="1" />
+                <input class="date" type="text" maxlength="2" id="month14" placeholder="MM"
+                  oninput="moveToNextField(this, 'year14')" max="12" min="1" />
+                <input class="date" type="text" maxlength="2" id="year14" placeholder="YY"
+                  oninput="moveToNextField(this, null)" min="1" />
+</div>
+</td>
+</tr>
+  <tr>
+      <td>
+<div class="inputfield">
+4.
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <select id="art4" name="art4" style="max-width: 30vw;">
+    <option value="select">Select</option>
+    <option value="PA">ID card</option>
+    <option value="VP">Current ID card</option>
+    <option value="RP">Passport</option>
+    <option value="KP">Children's Passport</option>
+    <option value="PE">Passport Replacement</option>
+  </select>
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <input type="text" class="input" id="serialno4" name="serialno4" style="max-width: 30vw;"
+  />
+</div>
+</td>
+<td>
+  <div class="inputfield">
+    <input type="text" class="input" id="issueauthority4" name="issueauthority4" style="max-width: 30vw;"/>
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <input class="date" type="text" maxlength="2" id="day15" placeholder="DD"
+  oninput="moveToNextField(this, 'month15')" max="31" min="1" />
+<input class="date" type="text" maxlength="2" id="month15" placeholder="MM"
+  oninput="moveToNextField(this, 'year15')" max="12" min="1" />
+<input class="date" type="text" maxlength="2" id="year15" placeholder="YY"
+  oninput="moveToNextField(this, null)" min="1"  />
+</div>
+</td>
+<td>
+<div class="inputfield">
+  <input class="date" type="text" maxlength="2" id="day16" placeholder="DD"
+                  oninput="moveToNextField(this, 'month16')" max="31" min="1" />
+<input class="date" type="text" maxlength="2" id="month16" placeholder="MM"
+                  oninput="moveToNextField(this, 'year16')" max="12" min="1" />
+<input class="date" type="text" maxlength="2" id="year16" placeholder="YY"
+                  oninput="moveToNextField(this, null)" min="1" />
+</div>
+</td>
+</tr>
+
+
+</table>
+
+
+
+<br />
+<br />
+
+<h1 style="color: darkred; font-size: 1.7rem">
+  Only fill out if the people listed above have other apartments in
+  Germany in addition to the new apartment:
+</h1>
+<div style="margin-left: 1rem; display: flex">
+  <div class="inputfield" style="margin-top: 1rem; flex-direction: column">
+    <div>
+      <div style="
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: end;
+          ">
+        <label class="six" style="width: max-content">Ongoing No.</label>
+        <label class="no3" style="width: max-content; margin-left: 1.7rem">Untill Now</label>
+        <label class="no2" style="
+              width: max-content;
+              margin-right: 4rem;
+              margin-left: 4.7rem;
+            ">Future</label>
+      </div>
+
+      <div style="
+            display: flex;
+            margin-bottom: 1rem;
+            align-items: center;
+          ">
+        <label style="width: 290px; margin-right: 0" class="fsize">For married people/partners who do not live
+          permanently
+          separated:<span style="font-weight: 600">
+            Which apartment is primarily used by the family or
+            spouse/partner?</span></label>
+        <input class="three" type="text" class="input" id="additionalno1" name="zip" style="
+              width: 80px;
+              margin-right: 1rem;
+              text-align: center;
+              height: 40px;
+            " />
+        <input class="four" type="text" class="input" id="additionaluntil1" name="address" style="
+              width: 95px;
+              margin-right: 1rem;
+              height: 40px;
+              text-align: center;
+            " />
+        <input class="four" type="text" class="input" id="additionalfuture1" name="address" style="
+              width: 95px;
+              margin-right: 1rem;
+              height: 40px;
+              text-align: center;
+            " />
+      </div>
+      <div style="
+            display: flex;
+            margin-bottom: 1rem;
+            align-items: center;
+          ">
+        <label style="width: 290px; margin-right: 0" class="fsize">For minors:<span style="font-weight: 600">
+            Which apartment is primarily &nbsp; used by the legal
+            guardian?</span></label>
+        <input class="three" type="text" class="input" id="additionalno2" name="zip" style="
+              width: 80px;
+              margin-right: 1rem;
+              text-align: center;
+              height: 40px;
+            " />
+        <input class="four" type="text" class="input" id="additionaluntil2" name="address" style="
+              width: 95px;
+              margin-right: 1rem;
+              height: 40px;
+              text-align: center;
+            " />
+        <input class="four" type="text" class="input" id="additionalfuture2" name="address" style="
+              width: 95px;
+              margin-right: 1rem;
+              height: 40px;
+              text-align: center;
+            " />
+      </div>
+      <div style="
+            display: flex;
+            margin-bottom: 1rem;
+            align-items: center;
+          ">
+        <label style="width: 290px; margin-right: 0" class="fsize">For all other people:<span
+            style="font-weight: 600">
+            Which apartment is &nbsp; primarily used?</span></label>
+        <input class="three" type="text" class="input" id="additionalno3" name="zip" style="
+              width: 80px;
+              margin-right: 1rem;
+              text-align: center;
+              height: 40px;
+            " />
+        <input class="four" type="text" class="input" id="additionaluntil3" name="address" style="
+              width: 95px;
+              margin-right: 1rem;
+              height: 40px;
+              text-align: center;
+            " />
+        <input class="four" type="text" class="input" id="additionalfuture3" name="address" style="
+              width: 95px;
+              margin-right: 1rem;
+              height: 40px;
+              text-align: center;
+            " />
+      </div>
+      <div style="
+            display: flex;
+            margin-bottom: 1rem;
+            align-items: center;
+          ">
+        <label class="fsize" style="width: 290px; margin-right: 0">Postal code, municipality, street, house
+          number</label>
+        <input class="three" type="text" class="input" id="additionalno4" name="zip" style="
+              width: 80px;
+              margin-right: 1rem;
+              text-align: center;
+              height: 40px;
+            " />
+        <input class="five" type="text" class="input" id="additionaladdress" name="address" style="
+              width: 200px;
+              margin-right: 1rem;
+              height: 40px;
+              text-align: center;
+            " />
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+
+        <h1 style="color: darkred; font-size: 1.7rem">
+          This column is only to be filled out by persons who come from the
+          areas specified in Section 1 Paragraph 2 No. 3 of the Federal
+          Expellees Act:
+        </h1>
+        <div style="margin-left: 1rem; display: flex; width: 100%">
+          <div class="inputfield" style="margin-top: 1rem; flex-direction: column; width: 100%">
+            <div style="
+                  display: flex;
+                  align-items: center;
+                  margin-bottom: 1rem;
+                  width: 100%;
+                ">
+              <label style="
+                    text-align: center;
+                    width: 100px;
+                    text-align: center;
+                    margin-right: 3rem;
+                  ">to Ongoing No.</label>
+              <label style="width: 400px; margin-right: 2rem; text-align: center">Address on September 1, 1939</label>
+            </div>
+            <div style="width: 100%">
+              <div style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 1rem;
+                  ">
+                <input type="text" class="input" id="sepaddressno1" name="sepaddressno1"
+                  style="width: 100px; margin-right: 2rem; text-align: center" />
+                <input type="text" class="input" id="sepaddress1" name="sepaddress1"
+                  style="width: 500px; margin-right: 2rem; text-align: center" />
+              </div>
+              <div style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 1rem;
+                  ">
+                <input type="text" class="input" id="sepaddressno2" name="sepaddressno2"
+                  style="width: 100px; margin-right: 2rem; text-align: center" />
+                <input type="text" class="input" id="sepaddress2" name="sepaddress2"
+                  style="width: 500px; margin-right: 2rem; text-align: center" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+
+
+        <table>
+          <tr>
+            <th style="font-size: 10px;">Ongoing No.</th>
+            <th style="font-size: 10px;">E/LP/K</th>
+            <th style="font-size: 10px;">
+              Family name(s)/First Names(s)
+            </th>
+            <th style="font-size: 10px;">
+             Gender
+            </th>
+            <th style="font-size: 10px;">Date of Birth
+            </th>
+            <th style="font-size: 10px;">Relegion</th>
+            <th style="font-size: 10px;">Address</th>
+          </tr>
+          <tr>
+            <td>
+              <div class="inputfield">
+                <input style="max-width: 8vw;" type="text" class="input" id="elpknongoingno1" name="elpknongoingno1"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <select id="elpk1" name="elpk1" style="max-width:  min(10vw,60px);" >
+                  <option value="select">Select</option>
+                  <option value="E">Spouses / Life partner</option>
+                  <option value="VP">Widows / Former spouse</option>
+                  <option value="RP">
+                    children up to the age of 18 and their parents or legal
+                    representatives
+                  </option>
+                </select>
+              </div>
+            </td>
+            <td>
+              <input type="text" class="input" id="elpkname1" name="elpkname1"
+               style="max-width:  min(10vw,60px);"/>
+            </td>
+            <td>
+              <div class="inputfield" >
+                <label style="width: max-content; ">
+                  <input type="checkbox" name="gender5" value="M" onclick="handleCheckboxClick(this, 5)" />
+                  M
+                </label>
+                <br />
+                <label style="width: max-content;">
+                  <input type="checkbox" name="gender5" value="F" onclick="handleCheckboxClick(this, 5)" />
+                  F
+                </label>
+                <br />
+                <label style="width: max-content;">
+                  <input type="checkbox" name="gender5" value="D" onclick="handleCheckboxClick(this, 5)" />
+                  D
+                </label>
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input class="date" type="text" maxlength="2" id="day17" placeholder="DD"
+                  oninput="moveToNextField(this, 'month17')" max="31" min="1" />
+                /
+                <input class="date" type="text" maxlength="2" id="month17" placeholder="MM"
+                  oninput="moveToNextField(this, 'year17')" max="12" min="1" />
+                /
+                <input class="date" type="text" maxlength="2" id="year17" placeholder="YY"
+                  oninput="moveToNextField(this, null)" min="1" style="margin-right: 1rem" />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="elpkrelegion1" name="elpkrelegion"
+                   />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="elpkaddress1" name="elpkaddress"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="inputfield">
+                <input style="max-width: 8vw;" type="text" class="input" id="elpknongoingno2" name="elpknongoingno2"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <select id="elpk2" name="elpk2" style="max-width:  min(10vw,60px);" >
+                  <option value="select">Select</option>
+                  <option value="E">Spouses / Life partner</option>
+                  <option value="VP">Widows / Former spouse</option>
+                  <option value="RP">
+                    children up to the age of 18 and their parents or legal
+                    representatives
+                  </option>
+                </select>
+              </div>
+            </td>
+            <td>
+              <input type="text" class="input" id="elpkname2" name="elpkname2"
+               style="max-width:  min(10vw,60px);"/>
+            </td>
+            <td>
+              <div class="inputfield" >
+                <label style="width: max-content; ">
+                  <input type="checkbox" name="gender6" value="M" onclick="handleCheckboxClick(this, 5)" />
+                  M
+                </label>
+                <br />
+                <label style="width: max-content;">
+                  <input type="checkbox" name="gender6" value="F" onclick="handleCheckboxClick(this, 5)" />
+                  F
+                </label>
+                <br />
+                <label style="width: max-content;">
+                  <input type="checkbox" name="gender6" value="D" onclick="handleCheckboxClick(this, 5)" />
+                  D
+                </label>
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input class="date" type="text" maxlength="2" id="day18" placeholder="DD"
+                  oninput="moveToNextField(this, 'month17')" max="31" min="1" />
+                /
+                <input class="date" type="text" maxlength="2" id="month18" placeholder="MM"
+                  oninput="moveToNextField(this, 'year17')" max="12" min="1" />
+                /
+                <input class="date" type="text" maxlength="2" id="year18" placeholder="YY"
+                  oninput="moveToNextField(this, null)" min="1" style="margin-right: 1rem" />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="elpkrelegion2" name="elpkrelegion2"
+                   />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="elpkaddress2" name="elpkaddress2"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="inputfield">
+                <input style="max-width: 8vw;" type="text" class="input" id="elpknongoingno3" name="elpknongoingno3"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <select id="elpk3" name="elpk3" style="max-width:  min(10vw,60px);" >
+                  <option value="select">Select</option>
+                  <option value="E">Spouses / Life partner</option>
+                  <option value="VP">Widows / Former spouse</option>
+                  <option value="RP">
+                    children up to the age of 18 and their parents or legal
+                    representatives
+                  </option>
+                </select>
+              </div>
+            </td>
+            <td>
+              <input type="text" class="input" id="elpkname3" name="elpkname3"
+               style="max-width:  min(10vw,60px);"/>
+            </td>
+            <td>
+              <div class="inputfield" >
+                <label style="width: max-content; ">
+                  <input type="checkbox" name="gender7" value="M" onclick="handleCheckboxClick(this, 5)" />
+                  M
+                </label>
+                <br />
+                <label style="width: max-content;">
+                  <input type="checkbox" name="gender7" value="F" onclick="handleCheckboxClick(this, 5)" />
+                  F
+                </label>
+                <br />
+                <label style="width: max-content;">
+                  <input type="checkbox" name="gender7" value="D" onclick="handleCheckboxClick(this, 5)" />
+                  D
+                </label>
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input class="date" type="text" maxlength="2" id="day19" placeholder="DD"
+                  oninput="moveToNextField(this, 'month17')" max="31" min="1" />
+                /
+                <input class="date" type="text" maxlength="2" id="month19" placeholder="MM"
+                  oninput="moveToNextField(this, 'year17')" max="12" min="1" />
+                /
+                <input class="date" type="text" maxlength="2" id="year19" placeholder="YY"
+                  oninput="moveToNextField(this, null)" min="1" style="margin-right: 1rem" />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="elpkrelegion3" name="elpkrelegion3"
+                   />
+              </div>
+            </td>
+            <td>
+              <div class="inputfield">
+                <input type="text" class="input" id="elpkaddress3" name="elpkaddress3"
+                />
+              </div>
+            </td>
+          </tr>
+          </table>
+
+
+        <div class="inputfield" style="margin-top: 1rem; margin-bottom: 2rem">
+          <label style="
+                width: max-content;
+                font-size: 2rem;
+                font-weight: 600;
+                margin-left: 2.5rem;
+              ">Date</label>
+          <input class="date" type="text" maxlength="2" id="day20" placeholder="DD"
+            oninput="moveToNextField(this, 'month20')" max="31" min="1" />
+          /
+          <input class="date" type="text" maxlength="2" id="month20" placeholder="MM"
+            oninput="moveToNextField(this, 'year20')" max="12" min="1" />
+          /
+          <input class="date" type="text" maxlength="2" id="year20" placeholder="YY"
+            oninput="moveToNextField(this, null)" min="1" style="margin-right: 1rem" />
+        </div>
+
+        <div style="display: flex; margin-bottom: 2rem">
+          <h1 style="color: darkred; font-size: 1.5rem">
+            I agree to receiving four free copies of the Stuttgart Official
+            Gazette. The trial subscription then ends automatically.
+          </h1>
+          <label style="
+                width: max-content;
+                margin-right: 6px;
+                font-size: 1.8rem;
+                color: darkred;
+                font-weight: 600;
+              ">
+            <input type="checkbox" name="finaltick" id="yes" onclick="handleCheckbox(this)" />
+            Yes
+          </label>
+          <br />
+          <label style="
+                width: max-content;
+                margin-right: 6px;
+                font-size: 1.8rem;
+                color: darkred;
+                font-weight: 600;
+              ">
+            <input type="checkbox" name="finaltick" id="no" onclick="handleCheckbox(this)" />
+            No
+          </label>
+        </div>
+
+        <div class="inputfield btns" id="btn">
+          <button value="downloadenglish" type="button" class="btn1" id="btn1" onclick="downloadenglish()">
+            Submit English Form
+          </button>
+          <p id="output1"></p>
+          <button value="downloadgerman" type="button" class="btn2" id="btn2" onclick="downloadgerman()">
+            Submit German Form
+          </button>
+          <p id="output2"></p>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script>
+    async function downloadenglish() {
+      console.log("hello");
+      var moveindd = document.getElementById("day").value;
+      var moveindd1 = parseInt(moveindd / 10);
+      var moveindd2 = parseInt(moveindd % 10);
+      var moveinmm = document.getElementById("month").value;
+      var moveinmm1 = parseInt(moveinmm / 10);
+      var moveinmm2 = parseInt(moveinmm % 10);
+      var moveinyy = document.getElementById("year").value;
+      var moveinyy1 = parseInt(moveinyy / 10);
+      var moveinyy2 = parseInt(moveinyy % 10);
+      var zip = document.getElementById("zip").value;
+      var newFlatAddress = document.getElementById("newFlatAddress").value;
+
+      var prevpostalcode = document.getElementById("prevpostalcode").value;
+      var prevaddress = document.getElementById("prevaddress").value;
+      var prevabroadaddress =
+        document.getElementById("prevabroadaddress").value;
+
+      var familyname1 = document.getElementById("familyname1").value;
+      var firstname1 = document.getElementById("firstname1").value;
+      var person1dobdd = document.getElementById("day1").value;
+      var person1dobdd1 = parseInt(person1dobdd / 10);
+      var person1dobdd2 = parseInt(person1dobdd % 10);
+      var person1dobmm = document.getElementById("month1").value;
+      var person1dobmm1 = parseInt(person1dobmm / 10);
+      var person1dobmm2 = parseInt(person1dobmm % 10);
+      var person1dobyy = document.getElementById("year1").value;
+      var person1dobyy1 = parseInt(person1dobyy / 10);
+      var person1dobyy2 = parseInt(person1dobyy % 10);
+      var person1gender = getGender("gender1");
+
+      var familyname2 = document.getElementById("familyname2").value;
+      var firstname2 = document.getElementById("firstname2").value;
+      var person2dobdd = document.getElementById("day2").value;
+      var person2dobdd1 = parseInt(person2dobdd / 10);
+      var person2dobdd2 = parseInt(person2dobdd % 10);
+      var person2dobmm = document.getElementById("month2").value;
+      var person2dobmm1 = parseInt(person2dobmm / 10);
+      var person2dobmm2 = parseInt(person2dobmm % 10);
+      var person2dobyy = document.getElementById("year2").value;
+      var person2dobyy1 = parseInt(person2dobyy / 10);
+      var person2dobyy2 = parseInt(person2dobyy % 10);
+      var person2gender = getGender("gender2");
+
+      var familyname3 = document.getElementById("familyname3").value;
+      var firstname3 = document.getElementById("firstname3").value;
+      var person3dobdd = document.getElementById("day3").value;
+      var person3dobdd1 = parseInt(person3dobdd / 10);
+      var person3dobdd2 = parseInt(person3dobdd % 10);
+      var person3dobmm = document.getElementById("month3").value;
+      var person3dobmm1 = parseInt(person3dobmm / 10);
+      var person3dobmm2 = parseInt(person3dobmm % 10);
+      var person3dobyy = document.getElementById("year3").value;
+      var person3dobyy1 = parseInt(person3dobyy / 10);
+      var person3dobyy2 = parseInt(person3dobyy % 10);
+      var person3gender = getGender("gender3");
+
+      var familyname4 = document.getElementById("familyname4").value;
+      var firstname4 = document.getElementById("firstname4").value;
+      var person4dobdd = document.getElementById("day4").value;
+      var person4dobdd1 = parseInt(person4dobdd / 10);
+      var person4dobdd2 = parseInt(person4dobdd % 10);
+      var person4dobmm = document.getElementById("month4").value;
+      var person4dobmm1 = parseInt(person4dobmm / 10);
+      var person4dobmm2 = parseInt(person4dobmm % 10);
+      var person4dobyy = document.getElementById("year4").value;
+      var person4dobyy1 = parseInt(person4dobyy / 10);
+      var person4dobyy2 = parseInt(person4dobyy % 10);
+      var person4gender = getGender("gender4");
+
+      var placeofbirth1 = document.getElementById("placeofbirth1").value;
+      var martialstatus1 = document.getElementById("martialstatus1").value;
+      var martialstatussince1dd = document.getElementById("day5").value;
+      var martialstatussince1dd1 = parseInt(martialstatussince1dd / 10);
+      var martialstatussince1dd2 = parseInt(martialstatussince1dd % 10);
+      var martialstatussince1mm = document.getElementById("month5").value;
+      var martialstatussince1mm1 = parseInt(martialstatussince1mm / 10);
+      var martialstatussince1mm2 = parseInt(martialstatussince1mm % 10);
+      var martialstatussince1yy = document.getElementById("year5").value;
+      var martialstatussince1yy1 = parseInt(martialstatussince1yy / 10);
+      var martialstatussince1yy2 = parseInt(martialstatussince1yy % 10);
+      var placeofmarriage1 =
+        document.getElementById("placeofmarriage1").value;
+      var relegion1 = document.getElementById("year4").value;
+      var nationality1 = getGender("gender4");
+
+      var placeofbirth2 = document.getElementById("placeofbirth2").value;
+      var martialstatus2 = document.getElementById("martialstatus2").value;
+      var martialstatussince2dd = document.getElementById("day6").value;
+      var martialstatussince2dd1 = parseInt(martialstatussince2dd / 10);
+      var martialstatussince2dd2 = parseInt(martialstatussince2dd % 10);
+      var martialstatussince2mm = document.getElementById("month6").value;
+      var martialstatussince2mm1 = parseInt(martialstatussince2mm / 10);
+      var martialstatussince2mm2 = parseInt(martialstatussince2mm % 10);
+      var martialstatussince2yy = document.getElementById("year6").value;
+      var martialstatussince2yy1 = parseInt(martialstatussince2yy / 10);
+      var martialstatussince2yy2 = parseInt(martialstatussince2yy % 10);
+      var placeofmarriage2 =
+        document.getElementById("placeofmarriage2").value;
+      var relegion2 = document.getElementById("relegion2").value;
+      var nationality2 = getGender("nationality2");
+
+      var placeofbirth3 = document.getElementById("placeofbirth3").value;
+      var martialstatus3 = document.getElementById("martialstatus3").value;
+      var martialstatussince3dd = document.getElementById("day7").value;
+      var martialstatussince3dd1 = parseInt(martialstatussince3dd / 10);
+      var martialstatussince3dd2 = parseInt(martialstatussince3dd % 10);
+      var martialstatussince3mm = document.getElementById("month7").value;
+      var martialstatussince3mm1 = parseInt(martialstatussince3mm / 10);
+      var martialstatussince3mm2 = parseInt(martialstatussince3mm % 10);
+      var martialstatussince3yy = document.getElementById("year7").value;
+      var martialstatussince3yy1 = parseInt(martialstatussince3yy / 10);
+      var martialstatussince3yy2 = parseInt(martialstatussince3yy % 10);
+      var placeofmarriage3 =
+        document.getElementById("placeofmarriage1").value;
+      var relegion3 = document.getElementById("relegion3").value;
+      var nationality3 = getGender("nationality3");
+
+      var placeofbirth4 = document.getElementById("placeofbirth4").value;
+      var martialstatus4 = document.getElementById("martialstatus4").value;
+      var martialstatussince4dd = document.getElementById("day8").value;
+      var martialstatussince4dd1 = parseInt(martialstatussince4dd / 10);
+      var martialstatussince4dd2 = parseInt(martialstatussince4dd % 10);
+      var martialstatussince4mm = document.getElementById("month8").value;
+      var martialstatussince4mm1 = parseInt(martialstatussince4mm / 10);
+      var martialstatussince4mm2 = parseInt(martialstatussince4mm % 10);
+      var martialstatussince4yy = document.getElementById("year8").value;
+      var martialstatussince4yy1 = parseInt(martialstatussince4yy / 10);
+      var martialstatussince4yy2 = parseInt(martialstatussince4yy % 10);
+      var placeofmarriage4 =
+        document.getElementById("placeofmarriage4").value;
+      var relegion4 = document.getElementById("relegion4").value;
+      var nationality4 = getGender("nationality4");
+
+      var art1 = document.getElementById("art1").value;
+      var serialno1 = document.getElementById("serialno1").value;
+      var issueauthority1 = document.getElementById("issueauthority1").value;
+      var dateofissue1dd = document.getElementById("day9").value;
+      var dateofissue1dd1 = parseInt(dateofissue1dd / 10);
+      var dateofissue1dd2 = parseInt(dateofissue1dd % 10);
+      var dateofissue1mm = document.getElementById("month9").value;
+      var dateofissue1mm1 = parseInt(dateofissue1mm / 10);
+      var dateofissue1mm2 = parseInt(dateofissue1mm % 10);
+      var dateofissue1yy = document.getElementById("year9").value;
+      var dateofissue1yy1 = parseInt(dateofissue1yy / 10);
+      var dateofissue1yy2 = parseInt(dateofissue1yy % 10);
+      var dateofexpiry1dd = document.getElementById("day10").value;
+      var dateofexpiry1dd1 = parseInt(dateofexpiry1dd / 10);
+      var dateofexpiry1dd2 = parseInt(dateofexpiry1dd % 10);
+      var dateofexpiry1mm = document.getElementById("month10").value;
+      var dateofexpiry1mm1 = parseInt(dateofexpiry1mm / 10);
+      var dateofexpiry1mm2 = parseInt(dateofexpiry1mm % 10);
+      var dateofexpiry1yy = document.getElementById("year10").value;
+      var dateofexpiry1yy1 = parseInt(dateofexpiry1yy / 10);
+      var dateofexpiry1yy2 = parseInt(dateofexpiry1yy % 10);
+
+      var art2 = document.getElementById("art2").value;
+      var serialno2 = document.getElementById("serialno2").value;
+      var issueauthority2 = document.getElementById("issueauthority2").value;
+      var dateofissue2dd = document.getElementById("day11").value;
+      var dateofissue2dd1 = parseInt(dateofissue2dd / 10);
+      var dateofissue2dd2 = parseInt(dateofissue2dd % 10);
+      var dateofissue2mm = document.getElementById("month11").value;
+      var dateofissue2mm1 = parseInt(dateofissue2mm / 10);
+      var dateofissue2mm2 = parseInt(dateofissue2mm % 10);
+      var dateofissue2yy = document.getElementById("year11").value;
+      var dateofissue2yy1 = parseInt(dateofissue2yy / 10);
+      var dateofissue2yy2 = parseInt(dateofissue2yy % 10);
+      var dateofexpiry2dd = document.getElementById("day12").value;
+      var dateofexpiry2dd1 = parseInt(dateofexpiry2dd / 10);
+      var dateofexpiry2dd2 = parseInt(dateofexpiry2dd % 10);
+      var dateofexpiry2mm = document.getElementById("month12").value;
+      var dateofexpiry2mm1 = parseInt(dateofexpiry2mm / 10);
+      var dateofexpiry2mm2 = parseInt(dateofexpiry2mm % 10);
+      var dateofexpiry2yy = document.getElementById("year12").value;
+      var dateofexpiry2yy1 = parseInt(dateofexpiry2yy / 10);
+      var dateofexpiry2yy2 = parseInt(dateofexpiry2yy % 10);
+
+      var art3 = document.getElementById("art3").value;
+      var serialno3 = document.getElementById("serialno3").value;
+      var issueauthority3 = document.getElementById("issueauthority3").value;
+      var dateofissue3dd = document.getElementById("day13").value;
+      var dateofissue3dd1 = parseInt(dateofissue3dd / 10);
+      var dateofissue3dd2 = parseInt(dateofissue3dd % 10);
+      var dateofissue3mm = document.getElementById("month13").value;
+      var dateofissue3mm1 = parseInt(dateofissue3mm / 10);
+      var dateofissue3mm2 = parseInt(dateofissue3mm % 10);
+      var dateofissue3yy = document.getElementById("year13").value;
+      var dateofissue3yy1 = parseInt(dateofissue3yy / 10);
+      var dateofissue3yy2 = parseInt(dateofissue3yy % 10);
+      var dateofexpiry3dd = document.getElementById("day14").value;
+      var dateofexpiry3dd1 = parseInt(dateofexpiry3dd / 10);
+      var dateofexpiry3dd2 = parseInt(dateofexpiry3dd % 10);
+      var dateofexpiry3mm = document.getElementById("month14").value;
+      var dateofexpiry3mm1 = parseInt(dateofexpiry3mm / 10);
+      var dateofexpiry3mm2 = parseInt(dateofexpiry3mm % 10);
+      var dateofexpiry3yy = document.getElementById("year14").value;
+      var dateofexpiry3yy1 = parseInt(dateofexpiry3yy / 10);
+      var dateofexpiry3yy2 = parseInt(dateofexpiry3yy % 10);
+
+      var art4 = document.getElementById("art4").value;
+      var serialno4 = document.getElementById("serialno4").value;
+      var issueauthority4 = document.getElementById("issueauthority4").value;
+      var dateofissue4dd = document.getElementById("day15").value;
+      var dateofissue4dd1 = parseInt(dateofissue4dd / 10);
+      var dateofissue4dd2 = parseInt(dateofissue4dd % 10);
+      var dateofissue4mm = document.getElementById("month15").value;
+      var dateofissue4mm1 = parseInt(dateofissue4mm / 10);
+      var dateofissue4mm2 = parseInt(dateofissue4mm % 10);
+      var dateofissue4yy = document.getElementById("year15").value;
+      var dateofissue4yy1 = parseInt(dateofissue4yy / 10);
+      var dateofissue4yy2 = parseInt(dateofissue4yy % 10);
+      var dateofexpiry4dd = document.getElementById("day16").value;
+      var dateofexpiry4dd1 = parseInt(dateofexpiry4dd / 10);
+      var dateofexpiry4dd2 = parseInt(dateofexpiry4dd % 10);
+      var dateofexpiry4mm = document.getElementById("month16").value;
+      var dateofexpiry4mm1 = parseInt(dateofexpiry4mm / 10);
+      var dateofexpiry4mm2 = parseInt(dateofexpiry4mm % 10);
+      var dateofexpiry4yy = document.getElementById("year16").value;
+      var dateofexpiry4yy1 = parseInt(dateofexpiry4yy / 10);
+      var dateofexpiry4yy2 = parseInt(dateofexpiry4yy % 10);
+
+      var additionalno1 = document.getElementById("additionalno1").value;
+      var additionaluntil1 =
+        document.getElementById("additionaluntil1").value;
+      var additionalfuture1 =
+        document.getElementById("additionalfuture1").value;
+
+      var additionalno2 = document.getElementById("additionalno2").value;
+      var additionaluntil2 =
+        document.getElementById("additionaluntil2").value;
+      var additionalfuture2 =
+        document.getElementById("additionalfuture2").value;
+
+      var additionalno3 = document.getElementById("additionalno3").value;
+      var additionaluntil3 =
+        document.getElementById("additionaluntil3").value;
+      var additionalfuture3 =
+        document.getElementById("additionalfuture3").value;
+
+      var additionalno4 = document.getElementById("additionalno4").value;
+      var additionaladdress =
+        document.getElementById("additionaladdress").value;
+
+      var sepaddressno1 = document.getElementById("sepaddressno1").value;
+      var sepaddress1 = document.getElementById("sepaddress1").value;
+
+      var sepaddressno2 = document.getElementById("sepaddressno2").value;
+      var sepaddress2 = document.getElementById("sepaddress2").value;
+
+      var elpknongoingno1 = document.getElementById("elpknongoingno1").value;
+      var elpk1 = document.getElementById("elpk1").value;
+      var elpkname1 = document.getElementById("elpkname1").value;
+      var elpkgender1 = getGender("gender5");
+      var elpkdateofbirth1dd = document.getElementById("day17").value;
+      var elpkdateofbirth1dd1 = parseInt(elpkdateofbirth1dd / 10);
+      var elpkdateofbirth1dd2 = parseInt(elpkdateofbirth1dd % 10);
+      var elpkdateofbirth1mm = document.getElementById("month17").value;
+      var elpkdateofbirth1mm1 = parseInt(elpkdateofbirth1mm / 10);
+      var elpkdateofbirth1mm2 = parseInt(elpkdateofbirth1mm % 10);
+      var elpkdateofbirth1yy = document.getElementById("year17").value;
+      var elpkdateofbirth1yy1 = parseInt(elpkdateofbirth1yy / 10);
+      var elpkdateofbirth1yy2 = parseInt(elpkdateofbirth1yy % 10);
+      var elpkrelegion1 = document.getElementById("elpkrelegion1").value;
+      var elpkaddress1 = document.getElementById("elpkaddress1").value;
+
+      var elpknongoingno2 = document.getElementById("elpknongoingno2").value;
+      var elpk2 = document.getElementById("elpk2").value;
+      var elpkname2 = document.getElementById("elpkname2").value;
+      var elpkgender2 = getGender("gender6");
+      var elpkdateofbirth2dd = document.getElementById("day18").value;
+      var elpkdateofbirth2dd1 = parseInt(elpkdateofbirth2dd / 10);
+      var elpkdateofbirth2dd2 = parseInt(elpkdateofbirth2dd % 10);
+      var elpkdateofbirth2mm = document.getElementById("month18").value;
+      var elpkdateofbirth2mm1 = parseInt(elpkdateofbirth2mm / 10);
+      var elpkdateofbirth2mm2 = parseInt(elpkdateofbirth2mm % 10);
+      var elpkdateofbirth2yy = document.getElementById("year18").value;
+      var elpkdateofbirth2yy1 = parseInt(elpkdateofbirth2yy / 10);
+      var elpkdateofbirth2yy2 = parseInt(elpkdateofbirth2yy % 10);
+      var elpkrelegion2 = document.getElementById("elpkrelegion2").value;
+      var elpkaddress2 = document.getElementById("elpkaddress2").value;
+
+      var elpknongoingno3 = document.getElementById("elpknongoingno3").value;
+      var elpk3 = document.getElementById("elpk3").value;
+      var elpkname3 = document.getElementById("elpkname3").value;
+      var elpkgender3 = getGender("gender7");
+      var elpkdateofbirth3dd = document.getElementById("day19").value;
+      var elpkdateofbirth3dd1 = parseInt(elpkdateofbirth3dd / 10);
+      var elpkdateofbirth3dd2 = parseInt(elpkdateofbirth3dd % 10);
+      var elpkdateofbirth3mm = document.getElementById("month19").value;
+      var elpkdateofbirth3mm1 = parseInt(elpkdateofbirth3mm / 10);
+      var elpkdateofbirth3mm2 = parseInt(elpkdateofbirth3mm % 10);
+      var elpkdateofbirth3yy = document.getElementById("year19").value;
+      var elpkdateofbirth3yy1 = parseInt(elpkdateofbirth3yy / 10);
+      var elpkdateofbirth3yy2 = parseInt(elpkdateofbirth3yy % 10);
+      var elpkrelegion3 = document.getElementById("elpkrelegion3").value;
+      var elpkaddress3 = document.getElementById("elpkaddress3").value;
+
+      var maindd = document.getElementById("day20").value;
+      var mainmm = document.getElementById("month20").value;
+      var mainyy = document.getElementById("year20").value;
+      var maindate = maindd + "/" + mainmm + "/" + mainyy;
+
+      var yes = document.getElementById("yes").checked;
+      var no = document.getElementById("no").checked;
+      
+      console.log('fetching pdf!');
+
+      const templatePdfBytes = await fetch("AnmeldungStuttgartEn.pdf").then(
+        (response) => response.arrayBuffer()
+      );
+      console.log('fetched pdf!');
+      const pdfDoc = await PDFLib.PDFDocument.load(templatePdfBytes);
+      const form = pdfDoc.getForm();
+
+      form.getTextField("moveindd1").setText(moveindd1.toString());
+      form.getTextField("moveindd2").setText(moveindd2.toString());
+      form.getTextField("moveinmm1").setText(moveinmm1.toString());
+      form.getTextField("moveinmm2").setText(moveinmm2.toString());
+      form.getTextField("moveinyy1").setText(moveinyy1.toString());
+      form.getTextField("moveinyy2").setText(moveinyy2.toString());
+      form.getTextField("zip").setText(zip);
+      form.getTextField("newFlatAddress").setText(newFlatAddress);
+
+      form.getTextField("prevpostalcode").setText(prevpostalcode);
+      form.getTextField("prevaddress").setText(prevaddress);
+      form.getTextField("prevabroadaddress").setText(prevabroadaddress);
+
+      form.getTextField("familyname1").setText(familyname1);
+      form.getTextField("firstname1").setText(firstname1);
+      form.getTextField("person1dobdd1").setText(person1dobdd1.toString());
+      form.getTextField("person1dobdd2").setText(person1dobdd2.toString());
+      form.getTextField("person1dobmm1").setText(person1dobmm1.toString());
+      form.getTextField("person1dobmm2").setText(person1dobmm2.toString());
+      form.getTextField("person1dobyy1").setText(person1dobyy1.toString());
+      form.getTextField("person1dobyy2").setText(person1dobyy2.toString());
+      form.getTextField("person1gender").setText(person1gender);
+
+      form.getTextField("familyname2").setText(familyname2);
+      form.getTextField("firstname2").setText(firstname2);
+      form.getTextField("person2dobdd1").setText(person2dobdd1.toString());
+      form.getTextField("person2dobdd2").setText(person2dobdd2.toString());
+      form.getTextField("person2dobmm1").setText(person2dobmm1.toString());
+      form.getTextField("person2dobmm2").setText(person2dobmm2.toString());
+      form.getTextField("person2dobyy1").setText(person2dobyy1.toString());
+      form.getTextField("person2dobyy2").setText(person2dobyy2.toString());
+      form.getTextField("person2gender").setText(person2gender);
+      form.getTextField("person1gender").setText(person1gender);
+
+      form.getTextField("familyname3").setText(familyname3);
+      form.getTextField("firstname3").setText(firstname3);
+      form.getTextField("person3dobdd1").setText(person3dobdd1.toString());
+      form.getTextField("person3dobdd2").setText(person3dobdd2.toString());
+      form.getTextField("person3dobmm1").setText(person3dobmm1.toString());
+      form.getTextField("person3dobmm2").setText(person3dobmm2.toString());
+      form.getTextField("person3dobyy1").setText(person3dobyy1.toString());
+      form.getTextField("person3dobyy2").setText(person3dobyy2.toString());
+      form.getTextField("person3gender").setText(person3gender);
+
+      form.getTextField("familyname4").setText(familyname4);
+      form.getTextField("firstname4").setText(firstname4);
+      form.getTextField("person4dobdd1").setText(person4dobdd1.toString());
+      form.getTextField("person4dobdd2").setText(person4dobdd2.toString());
+      form.getTextField("person4dobmm1").setText(person4dobmm1.toString());
+      form.getTextField("person4dobmm2").setText(person4dobmm2.toString());
+      form.getTextField("person4dobyy1").setText(person4dobyy1.toString());
+      form.getTextField("person4dobyy2").setText(person4dobyy2.toString());
+      form.getTextField("person4gender").setText(person4gender);
+
+      form.getTextField("placeofbirth1").setText(placeofbirth1);
+      form.getTextField("martialstatus1").setText(martialstatus1);
+      form
+        .getTextField("martialstatussince1dd1")
+        .setText(martialstatussince1dd1.toString());
+      form
+        .getTextField("martialstatussince1dd2")
+        .setText(martialstatussince1dd2.toString());
+      form
+        .getTextField("martialstatussince1mm1")
+        .setText(martialstatussince1mm1.toString());
+      form
+        .getTextField("martialstatussince1mm2")
+        .setText(martialstatussince1mm2.toString());
+      form
+        .getTextField("martialstatussince1yy1")
+        .setText(martialstatussince1yy1.toString());
+      form
+        .getTextField("martialstatussince1yy2")
+        .setText(martialstatussince1yy2.toString());
+      form.getTextField("placeofmarriage1").setText(placeofmarriage1);
+      form.getTextField("relegion1").setText(relegion1);
+      form.getTextField("nationality1").setText(nationality1);
+
+      form.getTextField("placeofbirth2").setText(placeofbirth2);
+      form.getTextField("martialstatus2").setText(martialstatus2);
+      form
+        .getTextField("martialstatussince2dd1")
+        .setText(martialstatussince2dd1.toString());
+      form
+        .getTextField("martialstatussince2dd2")
+        .setText(martialstatussince2dd2.toString());
+      form
+        .getTextField("martialstatussince2mm1")
+        .setText(martialstatussince2mm1.toString());
+      form
+        .getTextField("martialstatussince2mm2")
+        .setText(martialstatussince2mm2.toString());
+      form
+        .getTextField("martialstatussince2yy1")
+        .setText(martialstatussince2yy1.toString());
+      form
+        .getTextField("martialstatussince2yy2")
+        .setText(martialstatussince2yy2.toString());
+      form.getTextField("placeofmarriage2").setText(placeofmarriage2);
+      form.getTextField("relegion2").setText(relegion2);
+      form.getTextField("nationality2").setText(nationality2);
+      form.getTextField("placeofbirth3").setText(placeofbirth3);
+      form.getTextField("martialstatus3").setText(martialstatus3);
+      form
+        .getTextField("martialstatussince3dd1")
+        .setText(martialstatussince3dd1.toString());
+      form
+        .getTextField("martialstatussince3dd2")
+        .setText(martialstatussince3dd2.toString());
+      form
+        .getTextField("martialstatussince3mm1")
+        .setText(martialstatussince3mm1.toString());
+      form
+        .getTextField("martialstatussince3mm2")
+        .setText(martialstatussince3mm2.toString());
+      form
+        .getTextField("martialstatussince3yy1")
+        .setText(martialstatussince3yy1.toString());
+      form
+        .getTextField("martialstatussince3yy2")
+        .setText(martialstatussince3yy2.toString());
+      form.getTextField("placeofmarriage3").setText(placeofmarriage3);
+      form.getTextField("relegion3").setText(relegion3);
+      form.getTextField("nationality3").setText(nationality3);
+
+      form.getTextField("placeofbirth4").setText(placeofbirth4);
+      form.getTextField("martialstatus4").setText(martialstatus4);
+      form
+        .getTextField("martialstatussince4dd1")
+        .setText(martialstatussince4dd1.toString());
+      form
+        .getTextField("martialstatussince4dd2")
+        .setText(martialstatussince4dd2.toString());
+      form
+        .getTextField("martialstatussince4mm1")
+        .setText(martialstatussince4mm1.toString());
+      form
+        .getTextField("martialstatussince4mm2")
+        .setText(martialstatussince4mm2.toString());
+      form
+        .getTextField("martialstatussince4yy1")
+        .setText(martialstatussince4yy1.toString());
+      form
+        .getTextField("martialstatussince4yy2")
+        .setText(martialstatussince4yy2.toString());
+      form.getTextField("placeofmarriage4").setText(placeofmarriage4);
+      form.getTextField("relegion4").setText(relegion4);
+      form.getTextField("nationality4").setText(nationality4);
+
+      form.getTextField("art1").setText(art1);
+      form.getTextField("serialno1").setText(serialno1);
+      form.getTextField("issueauthority1").setText(issueauthority1);
+      form.getTextField("dateofissue1dd1").setText(dateofissue1dd1.toString());
+      form.getTextField("dateofissue1dd2").setText(dateofissue1dd2.toString());
+      form.getTextField("dateofissue1mm1").setText(dateofissue1mm1.toString());
+      form.getTextField("dateofissue1mm2").setText(dateofissue1mm2.toString());
+      form.getTextField("dateofissue1yy1").setText(dateofissue1yy1.toString());
+      form.getTextField("dateofissue1yy2").setText(dateofissue1yy2.toString());
+      form.getTextField("dateofexpiry1dd1").setText(dateofexpiry1dd1.toString());
+      form.getTextField("dateofexpiry1dd2").setText(dateofexpiry1dd2.toString());
+      form.getTextField("dateofexpiry1mm1").setText(dateofexpiry1mm1.toString());
+      form.getTextField("dateofexpiry1mm2").setText(dateofexpiry1mm2.toString());
+      form.getTextField("dateofexpiry1yy1").setText(dateofexpiry1yy1.toString());
+      form.getTextField("dateofexpiry1yy2").setText(dateofexpiry1yy2.toString());
+
+      form.getTextField("art2").setText(art2);
+      form.getTextField("serialno2").setText(serialno2);
+      form.getTextField("issueauthority2").setText(issueauthority2);
+      form.getTextField("dateofissue2dd1").setText(dateofissue2dd1.toString());
+      form.getTextField("dateofissue2dd2").setText(dateofissue2dd2.toString());
+      form.getTextField("dateofissue2mm1").setText(dateofissue2mm1.toString());
+      form.getTextField("dateofissue2mm2").setText(dateofissue2mm2.toString());
+      form.getTextField("dateofissue2yy1").setText(dateofissue2yy1.toString());
+      form.getTextField("dateofissue2yy2").setText(dateofissue2yy2.toString());
+      form.getTextField("dateofexpiry2dd1").setText(dateofexpiry2dd1.toString());
+      form.getTextField("dateofexpiry2dd2").setText(dateofexpiry2dd2.toString());
+      form.getTextField("dateofexpiry2mm1").setText(dateofexpiry2mm1.toString());
+      form.getTextField("dateofexpiry2mm2").setText(dateofexpiry2mm2.toString());
+      form.getTextField("dateofexpiry2yy1").setText(dateofexpiry2yy1.toString());
+      form.getTextField("dateofexpiry2yy2").setText(dateofexpiry2yy2.toString());
+
+      form.getTextField("art3").setText(art3);
+      form.getTextField("serialno3").setText(serialno3);
+      form.getTextField("issueauthority3").setText(issueauthority3);
+      form.getTextField("dateofissue3dd1").setText(dateofissue3dd1.toString());
+      form.getTextField("dateofissue3dd2").setText(dateofissue3dd2.toString());
+      form.getTextField("dateofissue3mm1").setText(dateofissue3mm1.toString());
+      form.getTextField("dateofissue3mm2").setText(dateofissue3mm2.toString());
+      form.getTextField("dateofissue3yy1").setText(dateofissue3yy1.toString());
+      form.getTextField("dateofissue3yy2").setText(dateofissue3yy2.toString());
+      form.getTextField("dateofexpiry3dd1").setText(dateofexpiry3dd1.toString());
+      form.getTextField("dateofexpiry3dd2").setText(dateofexpiry3dd2.toString());
+      form.getTextField("dateofexpiry3mm1").setText(dateofexpiry3mm1.toString());
+      form.getTextField("dateofexpiry3mm2").setText(dateofexpiry3mm2.toString());
+      form.getTextField("dateofexpiry3yy1").setText(dateofexpiry3yy1.toString());
+      form.getTextField("dateofexpiry3yy2").setText(dateofexpiry3yy2.toString());
+
+      form.getTextField("art4").setText(art4);
+      form.getTextField("serialno4").setText(serialno4);
+      form.getTextField("issueauthority4").setText(issueauthority4);
+      form.getTextField("dateofissue4dd1").setText(dateofissue4dd1.toString());
+      form.getTextField("dateofissue4dd2").setText(dateofissue4dd2.toString());
+      form.getTextField("dateofissue4mm1").setText(dateofissue4mm1.toString());
+      form.getTextField("dateofissue4mm2").setText(dateofissue4mm2.toString());
+      form.getTextField("dateofissue4yy1").setText(dateofissue4yy1.toString());
+      form.getTextField("dateofissue4yy2").setText(dateofissue4yy2.toString());
+      form.getTextField("dateofexpiry4dd1").setText(dateofexpiry4dd1.toString());
+      form.getTextField("dateofexpiry4dd2").setText(dateofexpiry4dd2.toString());
+      form.getTextField("dateofexpiry4mm1").setText(dateofexpiry4mm1.toString());
+      form.getTextField("dateofexpiry4mm2").setText(dateofexpiry4mm2.toString());
+      form.getTextField("dateofexpiry4yy1").setText(dateofexpiry4yy1.toString());
+      form.getTextField("dateofexpiry4yy2").setText(dateofexpiry4yy2.toString());
+
+      form.getTextField("additionalno1").setText(additionalno1);
+      form.getTextField("additionaluntil1").setText(additionaluntil1);
+      form.getTextField("additionalfuture1").setText(additionalfuture1);
+
+      form.getTextField("additionalno2").setText(additionalno2);
+      form.getTextField("additionaluntil2").setText(additionaluntil2);
+      form.getTextField("additionalfuture2").setText(additionalfuture2);
+
+      form.getTextField("additionalno3").setText(additionalno3);
+      form.getTextField("additionaluntil3").setText(additionaluntil3);
+      form.getTextField("additionalfuture3").setText(additionalfuture3);
+
+      form.getTextField("additionalno4").setText(additionalno4);
+      form.getTextField("additionaladdress").setText(additionaladdress);
+
+      form.getTextField("sepaddressno1").setText(sepaddressno1);
+      form.getTextField("sepaddress1").setText(sepaddress1);
+
+      form.getTextField("sepaddressno2").setText(sepaddressno2);
+
+      form.getTextField("elpknongoingno1").setText(elpknongoingno1);
+      form.getTextField("elpk1").setText(elpk1);
+      form.getTextField("elpkname1").setText(elpkname1);
+      form.getTextField("elpkgender1").setText(elpkgender1);
+      form.getTextField("elpkdateofbirth1dd1").setText(elpkdateofbirth1dd1.toString());
+      form.getTextField("elpkdateofbirth1dd2").setText(elpkdateofbirth1dd2.toString());
+      form.getTextField("elpkdateofbirth1mm1").setText(elpkdateofbirth1mm1.toString());
+      form.getTextField("elpkdateofbirth1mm2").setText(elpkdateofbirth1mm2.toString());
+      form.getTextField("elpkdateofbirth1yy1").setText(elpkdateofbirth1yy1.toString());
+      form.getTextField("elpkdateofbirth1yy2").setText(elpkdateofbirth1yy2.toString());
+      form.getTextField("elpkrelegion1").setText(elpkrelegion1);
+      form.getTextField("elpkaddress1").setText(elpkaddress1);
+
+      form.getTextField("elpknongoingno2").setText(elpknongoingno2);
+      form.getTextField("elpk2").setText(elpk2);
+      form.getTextField("elpkname2").setText(elpkname2);
+      form.getTextField("elpkgender2").setText(elpkgender2);
+      form.getTextField("elpkdateofbirth2dd1").setText(elpkdateofbirth2dd1.toString());
+      form.getTextField("elpkdateofbirth2dd2").setText(elpkdateofbirth2dd2.toString());
+      form.getTextField("elpkdateofbirth2mm1").setText(elpkdateofbirth2mm1.toString());
+      form.getTextField("elpkdateofbirth2mm2").setText(elpkdateofbirth2mm2.toString());
+      form.getTextField("elpkdateofbirth2yy1").setText(elpkdateofbirth2yy1.toString());
+      form.getTextField("elpkdateofbirth2yy2").setText(elpkdateofbirth2yy2.toString());
+      form.getTextField("elpkrelegion2").setText(elpkrelegion2);
+      form.getTextField("elpkaddress2").setText(elpkaddress2);
+
+      form.getTextField("elpknongoingno3").setText(elpknongoingno3);
+      form.getTextField("elpk3").setText(elpk3);
+      form.getTextField("elpkname3").setText(elpkname3);
+      form.getTextField("elpkgender3").setText(elpkgender3);
+      form.getTextField("elpkdateofbirth3dd1").setText(elpkdateofbirth3dd1.toString());
+      form.getTextField("elpkdateofbirth3dd2").setText(elpkdateofbirth3dd2.toString());
+      form.getTextField("elpkdateofbirth3mm1").setText(elpkdateofbirth3mm1.toString());
+      form.getTextField("elpkdateofbirth3mm2").setText(elpkdateofbirth3mm2.toString());
+      form.getTextField("elpkdateofbirth3yy1").setText(elpkdateofbirth3yy1.toString());
+      form.getTextField("elpkdateofbirth3yy2").setText(elpkdateofbirth3yy2.toString());
+      form.getTextField("elpkrelegion3").setText(elpkrelegion3);
+      form.getTextField("elpkaddress3").setText(elpkaddress3);
+
+      form.getTextField("maindate").setText(maindate);
+      if(yes) form.getCheckBox("yes").check();
+      else if(no) form.getCheckBox("no").check();
+
+      //do for rest of fields
+
+      const filledPdfBytes = await pdfDoc.save();
+
+      // Create a Blob containing the filled-in PDF data
+      const filledPdfBlob = new Blob([filledPdfBytes], {
+        type: "application/pdf",
+      });
+
+      // Create a URL for the Blob
+      const filledPdfUrl = URL.createObjectURL(filledPdfBlob);
+
+      // Create a link element to trigger the download
+      const a = document.createElement("a");
+      a.href = filledPdfUrl;
+      a.download = "filled_Anmeldung_Stuttgart_En.pdf"; // Set the desired file name
+      a.textContent = "Download";
+      a.style.margin = "1rem";
+      // Append the link element to the document body
+      const myNode = document.getElementById("output1");
+      if (myNode.lastElementChild) {
+        myNode.removeChild(myNode.lastElementChild);
+      }
+      document.getElementById("output1").appendChild(a);
+    }
+
+    async function downloadgerman() {
+      console.log("hello");
+
+      var moveindd = document.getElementById("day").value;
+      var moveindd1 = parseInt(moveindd / 10);
+      var moveindd2 = parseInt(moveindd % 10);
+      var moveinmm = document.getElementById("month").value;
+      var moveinmm1 = parseInt(moveinmm / 10);
+      var moveinmm2 = parseInt(moveinmm % 10);
+      var moveinyy = document.getElementById("year").value;
+      var moveinyy1 = parseInt(moveinyy / 10);
+      var moveinyy2 = parseInt(moveinyy % 10);
+      var zip = document.getElementById("zip").value;
+      var newFlatAddress = document.getElementById("newFlatAddress").value;
+
+      var prevpostalcode = document.getElementById("prevpostalcode").value;
+      var prevaddress = document.getElementById("prevaddress").value;
+      var prevabroadaddress =
+        document.getElementById("prevabroadaddress").value;
+
+      var familyname1 = document.getElementById("familyname1").value;
+      var firstname1 = document.getElementById("firstname1").value;
+      var person1dobdd = document.getElementById("day1").value;
+      var person1dobdd1 = parseInt(person1dobdd / 10);
+      var person1dobdd2 = parseInt(person1dobdd % 10);
+      var person1dobmm = document.getElementById("month1").value;
+      var person1dobmm1 = parseInt(person1dobmm / 10);
+      var person1dobmm2 = parseInt(person1dobmm % 10);
+      var person1dobyy = document.getElementById("year1").value;
+      var person1dobyy1 = parseInt(person1dobyy / 10);
+      var person1dobyy2 = parseInt(person1dobyy % 10);
+      var person1gender = getGender("gender1");
+
+      var familyname2 = document.getElementById("familyname2").value;
+      var firstname2 = document.getElementById("firstname2").value;
+      var person2dobdd = document.getElementById("day2").value;
+      var person2dobdd1 = parseInt(person2dobdd / 10);
+      var person2dobdd2 = parseInt(person2dobdd % 10);
+      var person2dobmm = document.getElementById("month2").value;
+      var person2dobmm1 = parseInt(person2dobmm / 10);
+      var person2dobmm2 = parseInt(person2dobmm % 10);
+      var person2dobyy = document.getElementById("year2").value;
+      var person2dobyy1 = parseInt(person2dobyy / 10);
+      var person2dobyy2 = parseInt(person2dobyy % 10);
+      var person2gender = getGender("gender2");
+
+      var familyname3 = document.getElementById("familyname3").value;
+      var firstname3 = document.getElementById("firstname3").value;
+      var person3dobdd = document.getElementById("day3").value;
+      var person3dobdd1 = parseInt(person3dobdd / 10);
+      var person3dobdd2 = parseInt(person3dobdd % 10);
+      var person3dobmm = document.getElementById("month3").value;
+      var person3dobmm1 = parseInt(person3dobmm / 10);
+      var person3dobmm2 = parseInt(person3dobmm % 10);
+      var person3dobyy = document.getElementById("year3").value;
+      var person3dobyy1 = parseInt(person3dobyy / 10);
+      var person3dobyy2 = parseInt(person3dobyy % 10);
+      var person3gender = getGender("gender3");
+
+      var familyname4 = document.getElementById("familyname4").value;
+      var firstname4 = document.getElementById("firstname4").value;
+      var person4dobdd = document.getElementById("day4").value;
+      var person4dobdd1 = parseInt(person4dobdd / 10);
+      var person4dobdd2 = parseInt(person4dobdd % 10);
+      var person4dobmm = document.getElementById("month4").value;
+      var person4dobmm1 = parseInt(person4dobmm / 10);
+      var person4dobmm2 = parseInt(person4dobmm % 10);
+      var person4dobyy = document.getElementById("year4").value;
+      var person4dobyy1 = parseInt(person4dobyy / 10);
+      var person4dobyy2 = parseInt(person4dobyy % 10);
+      var person4gender = getGender("gender4");
+
+      var placeofbirth1 = document.getElementById("placeofbirth1").value;
+      var martialstatus1 = document.getElementById("martialstatus1").value;
+      var martialstatussince1dd = document.getElementById("day5").value;
+      var martialstatussince1dd1 = parseInt(martialstatussince1dd / 10);
+      var martialstatussince1dd2 = parseInt(martialstatussince1dd % 10);
+      var martialstatussince1mm = document.getElementById("month5").value;
+      var martialstatussince1mm1 = parseInt(martialstatussince1mm / 10);
+      var martialstatussince1mm2 = parseInt(martialstatussince1mm % 10);
+      var martialstatussince1yy = document.getElementById("year5").value;
+      var martialstatussince1yy1 = parseInt(martialstatussince1yy / 10);
+      var martialstatussince1yy2 = parseInt(martialstatussince1yy % 10);
+      var placeofmarriage1 =
+        document.getElementById("placeofmarriage1").value;
+      var relegion1 = document.getElementById("year4").value;
+      var nationality1 = getGender("gender4");
+
+      var placeofbirth2 = document.getElementById("placeofbirth2").value;
+      var martialstatus2 = document.getElementById("martialstatus2").value;
+      var martialstatussince2dd = document.getElementById("day6").value;
+      var martialstatussince2dd1 = parseInt(martialstatussince2dd / 10);
+      var martialstatussince2dd2 = parseInt(martialstatussince2dd % 10);
+      var martialstatussince2mm = document.getElementById("month6").value;
+      var martialstatussince2mm1 = parseInt(martialstatussince2mm / 10);
+      var martialstatussince2mm2 = parseInt(martialstatussince2mm % 10);
+      var martialstatussince2yy = document.getElementById("year6").value;
+      var martialstatussince2yy1 = parseInt(martialstatussince2yy / 10);
+      var martialstatussince2yy2 = parseInt(martialstatussince2yy % 10);
+      var placeofmarriage2 =
+        document.getElementById("placeofmarriage2").value;
+      var relegion2 = document.getElementById("relegion2").value;
+      var nationality2 = getGender("nationality2");
+
+      var placeofbirth3 = document.getElementById("placeofbirth3").value;
+      var martialstatus3 = document.getElementById("martialstatus3").value;
+      var martialstatussince3dd = document.getElementById("day7").value;
+      var martialstatussince3dd1 = parseInt(martialstatussince3dd / 10);
+      var martialstatussince3dd2 = parseInt(martialstatussince3dd % 10);
+      var martialstatussince3mm = document.getElementById("month7").value;
+      var martialstatussince3mm1 = parseInt(martialstatussince3mm / 10);
+      var martialstatussince3mm2 = parseInt(martialstatussince3mm % 10);
+      var martialstatussince3yy = document.getElementById("year7").value;
+      var martialstatussince3yy1 = parseInt(martialstatussince3yy / 10);
+      var martialstatussince3yy2 = parseInt(martialstatussince3yy % 10);
+      var placeofmarriage3 =
+        document.getElementById("placeofmarriage1").value;
+      var relegion3 = document.getElementById("relegion3").value;
+      var nationality3 = getGender("nationality3");
+
+      var placeofbirth4 = document.getElementById("placeofbirth4").value;
+      var martialstatus4 = document.getElementById("martialstatus4").value;
+      var martialstatussince4dd = document.getElementById("day8").value;
+      var martialstatussince4dd1 = parseInt(martialstatussince4dd / 10);
+      var martialstatussince4dd2 = parseInt(martialstatussince4dd % 10);
+      var martialstatussince4mm = document.getElementById("month8").value;
+      var martialstatussince4mm1 = parseInt(martialstatussince4mm / 10);
+      var martialstatussince4mm2 = parseInt(martialstatussince4mm % 10);
+      var martialstatussince4yy = document.getElementById("year8").value;
+      var martialstatussince4yy1 = parseInt(martialstatussince4yy / 10);
+      var martialstatussince4yy2 = parseInt(martialstatussince4yy % 10);
+      var placeofmarriage4 =
+        document.getElementById("placeofmarriage4").value;
+      var relegion4 = document.getElementById("relegion4").value;
+      var nationality4 = getGender("nationality4");
+
+      var art1 = document.getElementById("art1").value;
+      var serialno1 = document.getElementById("serialno1").value;
+      var issueauthority1 = document.getElementById("issueauthority1").value;
+      var dateofissue1dd = document.getElementById("day9").value;
+      var dateofissue1dd1 = parseInt(dateofissue1dd / 10);
+      var dateofissue1dd2 = parseInt(dateofissue1dd % 10);
+      var dateofissue1mm = document.getElementById("month9").value;
+      var dateofissue1mm1 = parseInt(dateofissue1mm / 10);
+      var dateofissue1mm2 = parseInt(dateofissue1mm % 10);
+      var dateofissue1yy = document.getElementById("year9").value;
+      var dateofissue1yy1 = parseInt(dateofissue1yy / 10);
+      var dateofissue1yy2 = parseInt(dateofissue1yy % 10);
+      var dateofexpiry1dd = document.getElementById("day10").value;
+      var dateofexpiry1dd1 = parseInt(dateofexpiry1dd / 10);
+      var dateofexpiry1dd2 = parseInt(dateofexpiry1dd % 10);
+      var dateofexpiry1mm = document.getElementById("month10").value;
+      var dateofexpiry1mm1 = parseInt(dateofexpiry1mm / 10);
+      var dateofexpiry1mm2 = parseInt(dateofexpiry1mm % 10);
+      var dateofexpiry1yy = document.getElementById("year10").value;
+      var dateofexpiry1yy1 = parseInt(dateofexpiry1yy / 10);
+      var dateofexpiry1yy2 = parseInt(dateofexpiry1yy % 10);
+
+      var art2 = document.getElementById("art2").value;
+      var serialno2 = document.getElementById("serialno2").value;
+      var issueauthority2 = document.getElementById("issueauthority2").value;
+      var dateofissue2dd = document.getElementById("day11").value;
+      var dateofissue2dd1 = parseInt(dateofissue2dd / 10);
+      var dateofissue2dd2 = parseInt(dateofissue2dd % 10);
+      var dateofissue2mm = document.getElementById("month11").value;
+      var dateofissue2mm1 = parseInt(dateofissue2mm / 10);
+      var dateofissue2mm2 = parseInt(dateofissue2mm % 10);
+      var dateofissue2yy = document.getElementById("year11").value;
+      var dateofissue2yy1 = parseInt(dateofissue2yy / 10);
+      var dateofissue2yy2 = parseInt(dateofissue2yy % 10);
+      var dateofexpiry2dd = document.getElementById("day12").value;
+      var dateofexpiry2dd1 = parseInt(dateofexpiry2dd / 10);
+      var dateofexpiry2dd2 = parseInt(dateofexpiry2dd % 10);
+      var dateofexpiry2mm = document.getElementById("month12").value;
+      var dateofexpiry2mm1 = parseInt(dateofexpiry2mm / 10);
+      var dateofexpiry2mm2 = parseInt(dateofexpiry2mm % 10);
+      var dateofexpiry2yy = document.getElementById("year12").value;
+      var dateofexpiry2yy1 = parseInt(dateofexpiry2yy / 10);
+      var dateofexpiry2yy2 = parseInt(dateofexpiry2yy % 10);
+
+      var art3 = document.getElementById("art3").value;
+      var serialno3 = document.getElementById("serialno3").value;
+      var issueauthority3 = document.getElementById("issueauthority3").value;
+      var dateofissue3dd = document.getElementById("day13").value;
+      var dateofissue3dd1 = parseInt(dateofissue3dd / 10);
+      var dateofissue3dd2 = parseInt(dateofissue3dd % 10);
+      var dateofissue3mm = document.getElementById("month13").value;
+      var dateofissue3mm1 = parseInt(dateofissue3mm / 10);
+      var dateofissue3mm2 = parseInt(dateofissue3mm % 10);
+      var dateofissue3yy = document.getElementById("year13").value;
+      var dateofissue3yy1 = parseInt(dateofissue3yy / 10);
+      var dateofissue3yy2 = parseInt(dateofissue3yy % 10);
+      var dateofexpiry3dd = document.getElementById("day14").value;
+      var dateofexpiry3dd1 = parseInt(dateofexpiry3dd / 10);
+      var dateofexpiry3dd2 = parseInt(dateofexpiry3dd % 10);
+      var dateofexpiry3mm = document.getElementById("month14").value;
+      var dateofexpiry3mm1 = parseInt(dateofexpiry3mm / 10);
+      var dateofexpiry3mm2 = parseInt(dateofexpiry3mm % 10);
+      var dateofexpiry3yy = document.getElementById("year14").value;
+      var dateofexpiry3yy1 = parseInt(dateofexpiry3yy / 10);
+      var dateofexpiry3yy2 = parseInt(dateofexpiry3yy % 10);
+
+      var art4 = document.getElementById("art4").value;
+      var serialno4 = document.getElementById("serialno4").value;
+      var issueauthority4 = document.getElementById("issueauthority4").value;
+      var dateofissue4dd = document.getElementById("day15").value;
+      var dateofissue4dd1 = parseInt(dateofissue4dd / 10);
+      var dateofissue4dd2 = parseInt(dateofissue4dd % 10);
+      var dateofissue4mm = document.getElementById("month15").value;
+      var dateofissue4mm1 = parseInt(dateofissue4mm / 10);
+      var dateofissue4mm2 = parseInt(dateofissue4mm % 10);
+      var dateofissue4yy = document.getElementById("year15").value;
+      var dateofissue4yy1 = parseInt(dateofissue4yy / 10);
+      var dateofissue4yy2 = parseInt(dateofissue4yy % 10);
+      var dateofexpiry4dd = document.getElementById("day16").value;
+      var dateofexpiry4dd1 = parseInt(dateofexpiry4dd / 10);
+      var dateofexpiry4dd2 = parseInt(dateofexpiry4dd % 10);
+      var dateofexpiry4mm = document.getElementById("month16").value;
+      var dateofexpiry4mm1 = parseInt(dateofexpiry4mm / 10);
+      var dateofexpiry4mm2 = parseInt(dateofexpiry4mm % 10);
+      var dateofexpiry4yy = document.getElementById("year16").value;
+      var dateofexpiry4yy1 = parseInt(dateofexpiry4yy / 10);
+      var dateofexpiry4yy2 = parseInt(dateofexpiry4yy % 10);
+
+      var additionalno1 = document.getElementById("additionalno1").value;
+      var additionaluntil1 =
+        document.getElementById("additionaluntil1").value;
+      var additionalfuture1 =
+        document.getElementById("additionalfuture1").value;
+
+      var additionalno2 = document.getElementById("additionalno2").value;
+      var additionaluntil2 =
+        document.getElementById("additionaluntil2").value;
+      var additionalfuture2 =
+        document.getElementById("additionalfuture2").value;
+
+      var additionalno3 = document.getElementById("additionalno3").value;
+      var additionaluntil3 =
+        document.getElementById("additionaluntil3").value;
+      var additionalfuture3 =
+        document.getElementById("additionalfuture3").value;
+
+      var additionalno4 = document.getElementById("additionalno4").value;
+      var additionaladdress =
+        document.getElementById("additionaladdress").value;
+
+      var sepaddressno1 = document.getElementById("sepaddressno1").value;
+      var sepaddress1 = document.getElementById("sepaddress1").value;
+
+      var sepaddressno2 = document.getElementById("sepaddressno2").value;
+      var sepaddress2 = document.getElementById("sepaddress2").value;
+
+      var elpknongoingno1 = document.getElementById("elpknongoingno1").value;
+      var elpk1 = document.getElementById("elpk1").value;
+      var elpkname1 = document.getElementById("elpkname1").value;
+      var elpkgender1 = getGender("gender5");
+      var elpkdateofbirth1dd = document.getElementById("day17").value;
+      var elpkdateofbirth1dd1 = parseInt(elpkdateofbirth1dd / 10);
+      var elpkdateofbirth1dd2 = parseInt(elpkdateofbirth1dd % 10);
+      var elpkdateofbirth1mm = document.getElementById("month17").value;
+      var elpkdateofbirth1mm1 = parseInt(elpkdateofbirth1mm / 10);
+      var elpkdateofbirth1mm2 = parseInt(elpkdateofbirth1mm % 10);
+      var elpkdateofbirth1yy = document.getElementById("year17").value;
+      var elpkdateofbirth1yy1 = parseInt(elpkdateofbirth1yy / 10);
+      var elpkdateofbirth1yy2 = parseInt(elpkdateofbirth1yy % 10);
+      var elpkrelegion1 = document.getElementById("elpkrelegion1").value;
+      var elpkaddress1 = document.getElementById("elpkaddress1").value;
+
+      var elpknongoingno2 = document.getElementById("elpknongoingno2").value;
+      var elpk2 = document.getElementById("elpk2").value;
+      var elpkname2 = document.getElementById("elpkname2").value;
+      var elpkgender2 = getGender("gender6");
+      var elpkdateofbirth2dd = document.getElementById("day18").value;
+      var elpkdateofbirth2dd1 = parseInt(elpkdateofbirth2dd / 10);
+      var elpkdateofbirth2dd2 = parseInt(elpkdateofbirth2dd % 10);
+      var elpkdateofbirth2mm = document.getElementById("month18").value;
+      var elpkdateofbirth2mm1 = parseInt(elpkdateofbirth2mm / 10);
+      var elpkdateofbirth2mm2 = parseInt(elpkdateofbirth2mm % 10);
+      var elpkdateofbirth2yy = document.getElementById("year18").value;
+      var elpkdateofbirth2yy1 = parseInt(elpkdateofbirth2yy / 10);
+      var elpkdateofbirth2yy2 = parseInt(elpkdateofbirth2yy % 10);
+      var elpkrelegion2 = document.getElementById("elpkrelegion2").value;
+      var elpkaddress2 = document.getElementById("elpkaddress2").value;
+
+      var elpknongoingno3 = document.getElementById("elpknongoingno3").value;
+      var elpk3 = document.getElementById("elpk3").value;
+      var elpkname3 = document.getElementById("elpkname3").value;
+      var elpkgender3 = getGender("gender7");
+      var elpkdateofbirth3dd = document.getElementById("day19").value;
+      var elpkdateofbirth3dd1 = parseInt(elpkdateofbirth3dd / 10);
+      var elpkdateofbirth3dd2 = parseInt(elpkdateofbirth3dd % 10);
+      var elpkdateofbirth3mm = document.getElementById("month19").value;
+      var elpkdateofbirth3mm1 = parseInt(elpkdateofbirth3mm / 10);
+      var elpkdateofbirth3mm2 = parseInt(elpkdateofbirth3mm % 10);
+      var elpkdateofbirth3yy = document.getElementById("year19").value;
+      var elpkdateofbirth3yy1 = parseInt(elpkdateofbirth3yy / 10);
+      var elpkdateofbirth3yy2 = parseInt(elpkdateofbirth3yy % 10);
+      var elpkrelegion3 = document.getElementById("elpkrelegion3").value;
+      var elpkaddress3 = document.getElementById("elpkaddress3").value;
+
+      var maindd = document.getElementById("day20").value;
+      var mainmm = document.getElementById("month20").value;
+      var mainyy = document.getElementById("year20").value;
+      var maindate = maindd + "/" + mainmm + "/" + mainyy;
+
+      var yes = document.getElementById("yes").checked;
+      var no = document.getElementById("no").checked;
+      console.log("end");
+
+      const templatePdfBytes = await fetch("AnmeldungStuttgart.pdf").then(
+        (response) => response.arrayBuffer()
+      );
+      const pdfDoc = await PDFLib.PDFDocument.load(templatePdfBytes);
+      const form = pdfDoc.getForm();
+      // abrca
+      form.getTextField("moveindd1").setText(moveindd1.toString());
+      form.getTextField("moveindd2").setText(moveindd2.toString());
+      form.getTextField("moveinmm1").setText(moveinmm1.toString());
+      form.getTextField("moveinmm2").setText(moveinmm2.toString());
+      form.getTextField("moveinyy1").setText(moveinyy1.toString());
+      form.getTextField("moveinyy2").setText(moveinyy2.toString());
+      form.getTextField("zip").setText(zip);
+      form.getTextField("newFlatAddress").setText(newFlatAddress);
+
+      form.getTextField("prevpostalcode").setText(prevpostalcode);
+      form.getTextField("prevaddress").setText(prevaddress);
+      form.getTextField("prevabroadaddress").setText(prevabroadaddress);
+
+      form.getTextField("familyname1").setText(familyname1);
+      form.getTextField("firstname1").setText(firstname1);
+      form.getTextField("person1dobdd1").setText(person1dobdd1.toString());
+      form.getTextField("person1dobdd2").setText(person1dobdd2.toString());
+      form.getTextField("person1dobmm1").setText(person1dobmm1.toString());
+      form.getTextField("person1dobmm2").setText(person1dobmm2.toString());
+      form.getTextField("person1dobyy1").setText(person1dobyy1.toString());
+      form.getTextField("person1dobyy2").setText(person1dobyy2.toString());
+      form.getTextField("person1gender").setText(person1gender);
+
+      form.getTextField("familyname2").setText(familyname2);
+      form.getTextField("firstname2").setText(firstname2);
+      form.getTextField("person2dobdd1").setText(person2dobdd1.toString());
+      form.getTextField("person2dobdd2").setText(person2dobdd2.toString());
+      form.getTextField("person2dobmm1").setText(person2dobmm1.toString());
+      form.getTextField("person2dobmm2").setText(person2dobmm2.toString());
+      form.getTextField("person2dobyy1").setText(person2dobyy1.toString());
+      form.getTextField("person2dobyy2").setText(person2dobyy2.toString());
+      form.getTextField("person2gender").setText(person2gender);
+
+      form.getTextField("familyname3").setText(familyname3);
+      form.getTextField("firstname3").setText(firstname3);
+      form.getTextField("person3dobdd1").setText(person3dobdd1.toString());
+      form.getTextField("person3dobdd2").setText(person3dobdd2.toString());
+      form.getTextField("person3dobmm1").setText(person3dobmm1.toString());
+      form.getTextField("person3dobmm2").setText(person3dobmm2.toString());
+      form.getTextField("person3dobyy1").setText(person3dobyy1.toString());
+      form.getTextField("person3dobyy2").setText(person3dobyy2.toString());
+      form.getTextField("person3gender").setText(person3gender);
+
+      form.getTextField("familyname4").setText(familyname4);
+      form.getTextField("firstname4").setText(firstname4);
+      form.getTextField("person4dobdd1").setText(person4dobdd1.toString());
+      form.getTextField("person4dobdd2").setText(person4dobdd2.toString());
+      form.getTextField("person4dobmm1").setText(person4dobmm1.toString());
+      form.getTextField("person4dobmm2").setText(person4dobmm2.toString());
+      form.getTextField("person4dobyy1").setText(person4dobyy1.toString());
+      form.getTextField("person4dobyy2").setText(person4dobyy2.toString());
+      form.getTextField("person4gender").setText(person4gender);
+
+      form.getTextField("placeofbirth1").setText(placeofbirth1);
+      form.getTextField("martialstatus1").setText(martialstatus1);
+      form
+        .getTextField("martialstatussince1dd1")
+        .setText(martialstatussince1dd1.toString());
+      form
+        .getTextField("martialstatussince1dd2")
+        .setText(martialstatussince1dd2.toString());
+      form
+        .getTextField("martialstatussince1mm1")
+        .setText(martialstatussince1mm1.toString());
+      form
+        .getTextField("martialstatussince1mm2")
+        .setText(martialstatussince1mm2.toString());
+      form
+        .getTextField("martialstatussince1yy1")
+        .setText(martialstatussince1yy1.toString());
+      form
+        .getTextField("martialstatussince1yy2")
+        .setText(martialstatussince1yy2.toString());
+      form.getTextField("placeofmarriage1").setText(placeofmarriage1);
+      form.getTextField("relegion1").setText(relegion1);
+      form.getTextField("nationality1").setText(nationality1);
+
+      form.getTextField("placeofbirth2").setText(placeofbirth2);
+      form.getTextField("martialstatus2").setText(martialstatus2);
+      form
+        .getTextField("martialstatussince2dd1")
+        .setText(martialstatussince2dd1.toString());
+      form
+        .getTextField("martialstatussince2dd2")
+        .setText(martialstatussince2dd2.toString());
+      form
+        .getTextField("martialstatussince2mm1")
+        .setText(martialstatussince2mm1.toString());
+      form
+        .getTextField("martialstatussince2mm2")
+        .setText(martialstatussince2mm2.toString());
+      form
+        .getTextField("martialstatussince2yy1")
+        .setText(martialstatussince2yy1.toString());
+      form
+        .getTextField("martialstatussince2yy2")
+        .setText(martialstatussince2yy2.toString());
+      form.getTextField("placeofmarriage2").setText(placeofmarriage2);
+      form.getTextField("relegion2").setText(relegion2);
+      form.getTextField("nationality2").setText(nationality2);
+
+      form.getTextField("placeofbirth3").setText(placeofbirth3);
+      form.getTextField("martialstatus3").setText(martialstatus3);
+      form
+        .getTextField("martialstatussince3dd1")
+        .setText(martialstatussince3dd1.toString());
+      form
+        .getTextField("martialstatussince3dd2")
+        .setText(martialstatussince3dd2.toString());
+      form
+        .getTextField("martialstatussince3mm1")
+        .setText(martialstatussince3mm1.toString());
+      form
+        .getTextField("martialstatussince3mm2")
+        .setText(martialstatussince3mm2.toString());
+      form
+        .getTextField("martialstatussince3yy1")
+        .setText(martialstatussince3yy1.toString());
+      form
+        .getTextField("martialstatussince3yy2")
+        .setText(martialstatussince3yy2.toString());
+      form.getTextField("placeofmarriage3").setText(placeofmarriage3);
+      form.getTextField("relegion3").setText(relegion3);
+      form.getTextField("nationality3").setText(nationality3);
+
+      form.getTextField("placeofbirth4").setText(placeofbirth4);
+      form.getTextField("martialstatus4").setText(martialstatus4);
+      form
+        .getTextField("martialstatussince4dd1")
+        .setText(martialstatussince4dd1.toString());
+      form
+        .getTextField("martialstatussince4dd2")
+        .setText(martialstatussince4dd2.toString());
+      form
+        .getTextField("martialstatussince4mm1")
+        .setText(martialstatussince4mm1.toString());
+      form
+        .getTextField("martialstatussince4mm2")
+        .setText(martialstatussince4mm2.toString());
+      form
+        .getTextField("martialstatussince4yy1")
+        .setText(martialstatussince4yy1.toString());
+      form
+        .getTextField("martialstatussince4yy2")
+        .setText(martialstatussince4yy2.toString());
+      form.getTextField("placeofmarriage4").setText(placeofmarriage4);
+      form.getTextField("relegion4").setText(relegion4);
+      form.getTextField("nationality4").setText(nationality4);
+
+      form.getTextField("art1").setText(art1);
+      form.getTextField("serialno1").setText(serialno1);
+      form.getTextField("issueauthority1").setText(issueauthority1);
+      form.getTextField("dateofissue1dd1").setText(dateofissue1dd1.toString());
+      form.getTextField("dateofissue1dd2").setText(dateofissue1dd2.toString());
+      form.getTextField("dateofissue1mm1").setText(dateofissue1mm1.toString());
+      form.getTextField("dateofissue1mm2").setText(dateofissue1mm2.toString());
+      form.getTextField("dateofissue1yy1").setText(dateofissue1yy1.toString());
+      form.getTextField("dateofissue1yy2").setText(dateofissue1yy2.toString());
+      form.getTextField("dateofexpiry1dd1").setText(dateofexpiry1dd1.toString());
+      form.getTextField("dateofexpiry1dd2").setText(dateofexpiry1dd2.toString());
+      form.getTextField("dateofexpiry1mm1").setText(dateofexpiry1mm1.toString());
+      form.getTextField("dateofexpiry1mm2").setText(dateofexpiry1mm2.toString());
+      form.getTextField("dateofexpiry1yy1").setText(dateofexpiry1yy1.toString());
+      form.getTextField("dateofexpiry1yy2").setText(dateofexpiry1yy2.toString());
+
+      form.getTextField("art2").setText(art2);
+      form.getTextField("serialno2").setText(serialno2);
+      form.getTextField("issueauthority2").setText(issueauthority2);
+      form.getTextField("dateofissue2dd1").setText(dateofissue2dd1.toString());
+      form.getTextField("dateofissue2dd2").setText(dateofissue2dd2.toString());
+      form.getTextField("dateofissue2mm1").setText(dateofissue2mm1.toString());
+      form.getTextField("dateofissue2mm2").setText(dateofissue2mm2.toString());
+      form.getTextField("dateofissue2yy1").setText(dateofissue2yy1.toString());
+      form.getTextField("dateofissue2yy2").setText(dateofissue2yy2.toString());
+      form.getTextField("dateofexpiry2dd1").setText(dateofexpiry2dd1.toString());
+      form.getTextField("dateofexpiry2dd2").setText(dateofexpiry2dd2.toString());
+      form.getTextField("dateofexpiry2mm1").setText(dateofexpiry2mm1.toString());
+      form.getTextField("dateofexpiry2mm2").setText(dateofexpiry2mm2.toString());
+      form.getTextField("dateofexpiry2yy1").setText(dateofexpiry2yy1.toString());
+      form.getTextField("dateofexpiry2yy2").setText(dateofexpiry2yy2.toString());
+
+      form.getTextField("art3").setText(art3);
+      form.getTextField("serialno3").setText(serialno3);
+      form.getTextField("issueauthority3").setText(issueauthority3);
+      form.getTextField("dateofissue3dd1").setText(dateofissue3dd1.toString());
+      form.getTextField("dateofissue3dd2").setText(dateofissue3dd2.toString());
+      form.getTextField("dateofissue3mm1").setText(dateofissue3mm1.toString());
+      form.getTextField("dateofissue3mm2").setText(dateofissue3mm2.toString());
+      form.getTextField("dateofissue3yy1").setText(dateofissue3yy1.toString());
+      form.getTextField("dateofissue3yy2").setText(dateofissue3yy2.toString());
+      form.getTextField("dateofexpiry3dd1").setText(dateofexpiry3dd1.toString());
+      form.getTextField("dateofexpiry3dd2").setText(dateofexpiry3dd2.toString());
+      form.getTextField("dateofexpiry3mm1").setText(dateofexpiry3mm1.toString());
+      form.getTextField("dateofexpiry3mm2").setText(dateofexpiry3mm2.toString());
+      form.getTextField("dateofexpiry3yy1").setText(dateofexpiry3yy1.toString());
+      form.getTextField("dateofexpiry3yy2").setText(dateofexpiry3yy2.toString());
+
+      form.getTextField("art4").setText(art4);
+      form.getTextField("serialno4").setText(serialno4);
+      form.getTextField("issueauthority4").setText(issueauthority4);
+      form.getTextField("dateofissue4dd1").setText(dateofissue4dd1.toString());
+      form.getTextField("dateofissue4dd2").setText(dateofissue4dd2.toString());
+      form.getTextField("dateofissue4mm1").setText(dateofissue4mm1.toString());
+      form.getTextField("dateofissue4mm2").setText(dateofissue4mm2.toString());
+      form.getTextField("dateofissue4yy1").setText(dateofissue4yy1.toString());
+      form.getTextField("dateofissue4yy2").setText(dateofissue4yy2.toString());
+      form.getTextField("dateofexpiry4dd1").setText(dateofexpiry4dd1.toString());
+      form.getTextField("dateofexpiry4dd2").setText(dateofexpiry4dd2.toString());
+      form.getTextField("dateofexpiry4mm1").setText(dateofexpiry4mm1.toString());
+      form.getTextField("dateofexpiry4mm2").setText(dateofexpiry4mm2.toString());
+      form.getTextField("dateofexpiry4yy1").setText(dateofexpiry4yy1.toString());
+      form.getTextField("dateofexpiry4yy2").setText(dateofexpiry4yy2.toString());
+
+      form.getTextField("additionalno1").setText(additionalno1);
+      form.getTextField("additionaluntil1").setText(additionaluntil1);
+      form.getTextField("additionalfuture1").setText(additionalfuture1);
+
+      form.getTextField("additionalno2").setText(additionalno2);
+      form.getTextField("additionaluntil2").setText(additionaluntil2);
+      form.getTextField("additionalfuture2").setText(additionalfuture2);
+
+      form.getTextField("additionalno3").setText(additionalno3);
+      form.getTextField("additionaluntil3").setText(additionaluntil3);
+      form.getTextField("additionalfuture3").setText(additionalfuture3);
+
+      form.getTextField("additionalno4").setText(additionalno4);
+      form.getTextField("additionaladdress").setText(additionaladdress);
+
+      form.getTextField("sepaddressno1").setText(sepaddressno1);
+      form.getTextField("sepaddress1").setText(sepaddress1);
+
+      form.getTextField("sepaddressno2").setText(sepaddressno2);
+
+      form.getTextField("elpknongoingno1").setText(elpknongoingno1);
+      form.getTextField("elpk1").setText(elpk1);
+      form.getTextField("elpkname1").setText(elpkname1);
+      form.getTextField("elpkgender1").setText(elpkgender1);
+      form.getTextField("elpkdateofbirth1dd1").setText(elpkdateofbirth1dd1.toString());
+      form.getTextField("elpkdateofbirth1dd2").setText(elpkdateofbirth1dd2.toString());
+      form.getTextField("elpkdateofbirth1mm1").setText(elpkdateofbirth1mm1.toString());
+      form.getTextField("elpkdateofbirth1mm2").setText(elpkdateofbirth1mm2.toString());
+      form.getTextField("elpkdateofbirth1yy1").setText(elpkdateofbirth1yy1.toString());
+      form.getTextField("elpkdateofbirth1yy2").setText(elpkdateofbirth1yy2.toString());
+      form.getTextField("elpkrelegion1").setText(elpkrelegion1);
+      form.getTextField("elpkaddress1").setText(elpkaddress1);
+
+      form.getTextField("elpknongoingno2").setText(elpknongoingno2);
+      form.getTextField("elpk2").setText(elpk2);
+      form.getTextField("elpkname2").setText(elpkname2);
+      form.getTextField("elpkgender2").setText(elpkgender2);
+      form.getTextField("elpkdateofbirth2dd1").setText(elpkdateofbirth2dd1.toString());
+      form.getTextField("elpkdateofbirth2dd2").setText(elpkdateofbirth2dd2.toString());
+      form.getTextField("elpkdateofbirth2mm1").setText(elpkdateofbirth2mm1.toString());
+      form.getTextField("elpkdateofbirth2mm2").setText(elpkdateofbirth2mm2.toString());
+      form.getTextField("elpkdateofbirth2yy1").setText(elpkdateofbirth2yy1.toString());
+      form.getTextField("elpkdateofbirth2yy2").setText(elpkdateofbirth2yy2.toString());
+      form.getTextField("elpkrelegion2").setText(elpkrelegion2);
+      form.getTextField("elpkaddress2").setText(elpkaddress2);
+
+      form.getTextField("elpknongoingno3").setText(elpknongoingno3);
+      form.getTextField("elpk3").setText(elpk3);
+      form.getTextField("elpkname3").setText(elpkname3);
+      form.getTextField("elpkgender3").setText(elpkgender3);
+      form.getTextField("elpkdateofbirth3dd1").setText(elpkdateofbirth3dd1.toString());
+      form.getTextField("elpkdateofbirth3dd2").setText(elpkdateofbirth3dd2.toString());
+      form.getTextField("elpkdateofbirth3mm1").setText(elpkdateofbirth3mm1.toString());
+      form.getTextField("elpkdateofbirth3mm2").setText(elpkdateofbirth3mm2.toString());
+      form.getTextField("elpkdateofbirth3yy1").setText(elpkdateofbirth3yy1.toString());
+      form.getTextField("elpkdateofbirth3yy2").setText(elpkdateofbirth3yy2.toString());
+      form.getTextField("elpkrelegion3").setText(elpkrelegion3);
+      form.getTextField("elpkaddress3").setText(elpkaddress3);
+
+      form.getTextField("maindate").setText(maindate);
+      if(yes) form.getCheckBox("yes").check();
+      else if(no) form.getCheckBox("no").check();
+
+      //do for rest of fields
+
+      const filledPdfBytes = await pdfDoc.save();
+
+      // Create a Blob containing the filled-in PDF data
+      const filledPdfBlob = new Blob([filledPdfBytes], {
+        type: "application/pdf",
+      });
+
+      // Create a URL for the Blob
+      const filledPdfUrl = URL.createObjectURL(filledPdfBlob);
+
+      // Create a link element to trigger the download
+      const a = document.createElement("a");
+      a.href = filledPdfUrl;
+      a.download = "filled_AnmeldungStuttgart.pdf"; // Set the desired file name
+      a.textContent = "Download";
+      a.style.margin = "1rem";
+
+      // Append the link element to the document body
+      const myNode = document.getElementById("output2");
+      if (myNode.lastElementChild) {
+        myNode.removeChild(myNode.lastElementChild);
+      }
+      document.getElementById("output2").appendChild(a);
+    }
+
+    function getGender(name) {
+      var temp = document.getElementsByName(name);
+      for (let key of temp) {
+        if (key.checked) return key.value;
+      }
+
+      return "";
+    }
+
+    function moveToNextField(currentInput, nextInputId) {
+      const maxLength = parseInt(currentInput.getAttribute("maxlength"));
+      const inputLength = currentInput.value.length;
+
+      if (inputLength === maxLength && nextInputId) {
+        const nextInput = document.getElementById(nextInputId);
+        nextInput.focus();
+      }
+    }
+
+    function handleCheckboxClick(clickedCheckbox, num) {
+      const checkboxes = document.querySelectorAll(
+        `input[name="gender${num}"]`
+      );
+
+      checkboxes.forEach((checkbox) => {
+        if (checkbox !== clickedCheckbox) checkbox.checked = false;
+      });
+    }
+
+    function handleCheckbox(clickedCheckbox) {
+      const checkboxes = document.querySelectorAll(`input[name="finaltick"]`);
+
+      checkboxes.forEach((checkbox) => {
+        if (checkbox !== clickedCheckbox) checkbox.checked = false;
+      });
+    }
+  </script>
+
+  <!-- ======================================== 
+          Our JavaScript Section Start  
+    ========================================  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="index.js"></script>
+</body>
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.js"></script>
+
+</html>
